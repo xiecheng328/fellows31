@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 内部样式 -->
+    <style>
+        /*#div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #aaa{
+            width: 200px;
+            height: 200px;
+            background: #ff0000
+        }*/
+        /*
+        rgb:red green blue
+        */
+
+        /*.red{
+            background: #ff0000;
+        }
+        .green{
+            color: #0f0;
+        }*/
+
+        #div1, #div2{
+            background: #ff0000;
+        }
+        #div1{
+            color: #0f0;
+        }
+
+        #ul1 li{
+            background: #ff0000;
+        }
+
+        #div3 > span{
+            background: #ff0000;
+        }
+
+    </style>
+    <!-- 外部样式 -->
+    <!--<link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+    <!-- 内联样式 -->
+    <!--<h1 style="color: red;background: green;">唯创网讯</h1>-->
+    <!--<div style="color: red;background: green;">全栈开发</div>-->
+
+    <h1>唯创网讯</h1>
+    <h1>全栈开发</h1>
+    <div>divdivdiv</div>
+
+    <div id="div1" class="red green">div1</div>
+    <div id="div2" class="red">div2</div>
+    <div id="aaa">div3</div>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <div id="div3">
+        <span>aa</span>
+        <span>bb</span>
+        <p>
+            <span>cc</span>
+        </p>
+    </div>
+
+
+</body>
+</html>
+<!--
+内联样式
+内部样式
+外部样式
+
+css选择器
+1、标签/元素 选择器 div{}
+2、id选择器  id唯一的  #id{}
+3、class选择器  class可以重复的  .class{}
+4、分组选择器  #div1,#div2{}
+5、后代选择器  #div1 span{}
+6、子代选择器  #div1 > span{}  IE6不支持
+-->
