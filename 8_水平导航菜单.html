@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平导航菜单 </title>
+    <style>
+        /* 样式重置 css reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #list {
+            width: 420px;
+            height: 30px;
+        }
+
+        #list .item {
+            width: 100px;
+            height: 30px;
+            background: #ff0000;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 30px;
+            /*cursor: pointer;*/
+        }
+
+        #list .item:hover {
+            background: orange;
+        }
+
+        #list .item > a {
+            color: #fff;
+            text-decoration: none;
+            width: 100px;
+            height: 30px;
+            display: block;
+        }
+
+        #list .submenu {
+            display: none;
+        }
+
+        #list .submenu > li {
+            background: #cccccc;
+            cursor: pointer;
+        }
+
+        #list .submenu > li:hover {
+            background: #999;
+        }
+
+        #list .item:hover > .submenu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li class="item"><a href="">Link One</a></li>
+    <li class="item"><a href="">Link Two</a></li>
+    <li class="item">
+        <a href="">Link Three</a>
+        <ul class="submenu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+        </ul>
+    </li>
+    <li class="item"><a href="">Link Four</a></li>
+</ul>
+<h1>标题</h1>
+</body>
+</html>
