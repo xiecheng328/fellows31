@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 300px;
+            height: 200px;
+            background: #ff0000;
+            border: 10px solid #0f0;
+            padding: 30px;
+            /*margin: 50px;*/
+            margin-bottom: 50px;
+
+            /*border-radius: 50%;*/
+        }
+
+        #div2{
+            width: 300px;
+            height: 200px;
+            background: #cccccc;
+        }
+        #div3{
+            background: #ff0000;
+            padding: 20px 30px 40px 50px;
+        }
+        #span1{
+            background: #00ff00;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin: 20px;
+
+            display: block;
+        }
+        #div4{
+            width: 200px;
+            height: 200px;
+        }
+
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+            display: inline;
+        }
+        .box{
+            width: 80px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+        }
+        .box1{
+            background: #ff0000;
+            border-bottom: 2px solid;
+        }
+        .box2{
+            background: #ffff00;
+        }
+        .box3{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="div1">div1</div>-->
+    <!--<div id="div2">div2</div>-->
+    <div id="div4">
+        <div id="div3">div阿斯顿发生阿双方大师傅阿斯顿发顺丰阿斯顿发顺丰阿什顿发阿什顿发阿什顿发安防</div>
+    </div>
+    <span id="span1">span</span>
+    <a href="http://www.baidu.com">百度</a>
+    <div id="div5">div5</div>
+
+    <div class="box box1">登录</div><div class="box box2">注册</div><div class="box box3">开店</div>
+</body>
+</html>
+<!--
+盒模型：内容  内边距padding  边框border 外边距margin
+w3c标准盒模型:宽度/高度 = 内容的宽度/高度
+
+块级元素block：自己占一行  div h1~h6 p ul li ol  宽度如果不设置充满父元素的 高度如果不设置是内容撑开的
+行级元素inline：行级元素和行级元素在一行 span a 不能设置宽高 内容撑开的 不能设置margin-top\margin-bottom
+
+行级 -> 块级: display: block;
+块级 -> 行级: display: inline;
+行内块级元素 display: inline-block;
+-->
+
