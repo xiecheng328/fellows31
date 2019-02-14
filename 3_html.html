@@ -2,19 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>标题</title>
     </head>
     <body>
         <!-- 标题 -->
-        <h1>唯创网讯</h1>
+        <h1 title="是个标题">唯创网讯</h1>
         <h2>唯创网讯</h2>
         <h3>唯创网讯</h3>
         <h4>唯创网讯</h4>
         <h5>唯创网讯</h5>
         <h6>唯创网讯</h6>
 
-        <!-- 锚点 -->
-        <a href="http://www.baidu.com" target="_blank">百度一下</a>
+        <!-- 锚点 超链接 -->
+        <a href="http://www.baidu.com" target="_blank" title="这是百度">百度一下</a>
 
         <!-- 有序列表 -->
         <ol>
@@ -23,6 +23,12 @@
             <li>javascript</li>
             <li><a href="http://www.taobao.com">淘宝</a></li>
             <li><a href="">百度</a></li>
+            <li>
+                <ol>
+                    <li>aa</li>
+                    <li>bb</li>
+                </ol>
+            </li>
         </ol>
 
         <!-- 无序列表 -->
@@ -30,10 +36,24 @@
             <li>php</li>
             <li>nodejs</li>
             <li>mongodb</li>
+            <li>
+                <ul>
+                    <li>11</li>
+                    <li>22</li>
+                    <li>33</li>
+                    <li>
+                        <ul>
+                            <li>aa</li>
+                            <li>bb</li>
+                            <li>cc</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
 
         <!-- 图片  绝对路径 相对路径 -->
-        <img src="imgs/flower.jpeg" alt="图片加载失败" title="这是一个鲜花的图片">
+        <img src="./imgs/flower.jpeg" alt="图片加载失败" title="这是一个鲜花的图片">
         <img src="http://h.hiphotos.baidu.com/image/h%3D300/sign=cfbc01c5b1315c605c956defbdb0cbe6/a5c27d1ed21b0ef43497358ed0c451da80cb3ee6.jpg" alt="">
 
         <a href="http://www.baidu.com">
@@ -43,7 +63,7 @@
         <!-- 表格 rowspan="2" colspan="2"-->
         <table border="1">
             <tr>
-                <!--<td>11</td>-->
+                <td>11</td>
                 <td>22</td>
             </tr>
             <tr>
@@ -55,6 +75,7 @@
         <!-- div+css -->
         <div id="div1">这是一个div</div>
         <div id="div2">这是一个div</div>
+
 
         <span>这是一个span</span>
         <span>这是一个span</span>
