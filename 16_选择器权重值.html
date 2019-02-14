@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#div1{
+            background: #ff0000;
+        }
+
+        .div1{
+            background: #0f0;
+        }
+        
+        div{
+            background: #ffff00!important;
+        }*/
+
+
+        /*.bb{
+            background: #0f0;
+        }
+
+        .aa{
+            background: #ff0000;
+        }*/
+
+       /* #div1 .aa{
+            background: #ff0000;
+        }
+
+        #div1 div{
+            background: #00ff00;
+        }*/
+
+       /* #div1 .bb{
+            background: #ff0000;
+        }
+        .aa #div2{
+            background: #00ff00;
+        }*/
+
+        /*.a .b .c .d .e .f .g .h .i .j .k{
+            background: #ff0000;
+        }
+
+        #l{
+            background: #0f0;
+        }*/
+
+
+        /*div.aa.bb{
+            background: #ff0000;
+        }*/
+
+        .cc div{
+            background: #ff0000;
+        }
+
+        #gg .ee{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">
+        <div id="div2" class="bb">div</div>
+    </div>
+
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <div class="d">
+                    <div class="e">
+                        <div class="f">
+                            <div class="g">
+                                <div class="h">
+                                    <div class="i">
+                                        <div class="j">
+                                            <div class="k" id="l">div</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="aa">aa</div>
+    <div class="aa bb">bb</div>
+    <h1 class="aa bb">cc</h1>-->
+    <div id="gg">
+        <div class="cc">cc
+            <div class="dd">dd
+                <div class="ee" id="ff">ee</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!--
+权重值：
+!important > 内联样式 > id > class > tag
+
+
+-->
