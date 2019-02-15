@@ -1,0 +1,70 @@
+#header {
+    height: 32px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    line-height: 32px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+
+#login-info {
+    float: left;
+}
+
+#login-info span, #login-info a, #quick-menu a{
+    color: #999;
+}
+#login-info a{
+    padding-left: 12px;
+}
+#login-info a:hover{
+    color: #ff0036;
+}
+
+#quick-menu {
+    float: right;
+}
+
+#quick-menu .menu{
+    float: left;
+    padding: 0 14px;
+}
+
+#quick-menu .menu:hover a{
+    color: #ff0036;
+}
+
+#quick-menu .iconfont{
+    font-size: 12px;
+    color: #ff0036;
+}
+#quick-menu .triangle{
+    position: relative;
+}
+#quick-menu .triangle:hover{
+    background: #ffffff;
+}
+
+#quick-menu .arrow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #bbb transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    right: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
