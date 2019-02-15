@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            height: 2000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background: #ff0000;
+        }
+        .box2{
+            background: #ffff00;
+            /*position: relative;*/
+            /*top: 50px;*/
+            /*left: 50px;*/
+            /*right: 50px;*/
+            /*bottom: 50px;*/
+            /*top: -50px;*/
+            position: absolute;
+            top: 50px;
+            left: 100px;
+
+        }
+        .box3{
+            background: #00ff00;
+            width: 300px;
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background: #cccccc;
+            position: fixed;
+            top: 300px;
+            left: 10px;
+        }
+
+        .toolbar{
+            width: 30px;
+            background: #000000;
+            color: #fff;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .box5{
+            background: #999999;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+
+<div class="box4">广告</div>
+
+<div class="toolbar">toolbar</div>
+<strong>strong标签 </strong>
+<span>span标签</span>-->
+
+<div class="box box5">box1</div>
+<div class="box box5">box2</div>
+<div class="box box5">box3</div>
+</body>
+</html>
+<!--
+position: static; 默认值
+position: relative;  相对定位  相对于自己初始位置 不脱离文档流
+position: absolute;  绝对定位  脱离文档流 相对于最近的已定位的祖先元素 如果祖先元素都没定位，相对于最初包含块
+position: fixed;  固定定位  脱离文档流 相对于窗口/视口
+position: sticky; 粘性定位
+-->
