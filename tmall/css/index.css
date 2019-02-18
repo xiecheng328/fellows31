@@ -1,3 +1,4 @@
+/* header开始 */
 #header {
     height: 32px;
     background-color: #f2f2f2;
@@ -99,6 +100,101 @@
     color: #ff0036;
     text-decoration: underline;
 }
+
+#quick-menu .phone {
+    position: relative;
+}
+
+#quick-menu .phone:hover .qr-code {
+    display: block;
+}
+
+#quick-menu .qr-code {
+    width: 175px;
+    height: 227px;
+    background: #fff;
+    position: absolute;
+    top: 30px;
+    left: -43px;
+    -webkit-box-shadow: 0 0 5px #aaa;
+    -moz-box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #aaa;
+    display: none;
+}
+
+#quick-menu .qr-code::after {
+    content: '';
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -8px;
+    left: 85px;
+}
+
+/* header结束 */
+
+
+/* side-bar 开始 */
+#side-bar {
+    width: 35px;
+    background: #000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#side-bar .icon-shouji01 {
+    color: #fff;
+    float: left;
+    margin-top: 200px;
+    font-size: 30px;
+}
+
+#side-bar .vip {
+    width: 90px;
+    height: 30px;
+    background: #999999;
+    color: #fff;
+    position: absolute;
+    top: 215px;
+    left: -150px;
+    text-align: center;
+    line-height: 30px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#side-bar .content:hover .vip {
+    left: -90px;
+    opacity: 1;
+    visibility: visible;
+}
+
+#side-bar .arrow {
+    width: 10px;
+    height: 10px;
+    background: #999999;
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* side-bar 结束 */
+
 
 
 
