@@ -3,20 +3,23 @@
     background-color: #f2f2f2;
     font-size: 12px;
     line-height: 32px;
-    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    border-bottom: 1px solid #eee;
 }
 
 #login-info {
     float: left;
 }
 
-#login-info span, #login-info a, #quick-menu a{
+#login-info span, #login-info a, #quick-menu a {
     color: #999;
 }
-#login-info a{
+
+#login-info a {
     padding-left: 12px;
 }
-#login-info a:hover{
+
+#login-info a:hover {
     color: #ff0036;
 }
 
@@ -24,27 +27,40 @@
     float: right;
 }
 
-#quick-menu .menu{
+#quick-menu .menu {
     float: left;
     padding: 0 14px;
+    cursor: pointer;
 }
 
-#quick-menu .menu:hover a{
+#quick-menu .menu:hover > a {
     color: #ff0036;
 }
 
-#quick-menu .iconfont{
+#quick-menu .iconfont {
     font-size: 12px;
     color: #ff0036;
 }
-#quick-menu .triangle{
+
+#quick-menu .triangle {
     position: relative;
-}
-#quick-menu .triangle:hover{
-    background: #ffffff;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 1px;
+    height: 33px;
 }
 
-#quick-menu .arrow{
+#quick-menu .triangle:hover {
+    background: #ffffff;
+    border-color: #eee;
+}
+
+#quick-menu .triangle > a:hover {
+    text-decoration: underline;
+}
+
+#quick-menu .triangle::after {
+    content: '';
     width: 0;
     height: 0;
     border-style: solid;
@@ -55,6 +71,36 @@
     margin-top: -1.5px;
     right: 4px;
 }
+
+#quick-menu .triangle:hover::after {
+    transform: rotate(180deg);
+    transform-origin: 3px 1.5px;
+    transition: transform .4s ease;
+}
+
+#quick-menu .triangle:hover .submenu {
+    display: block;
+}
+
+#quick-menu .submenu {
+    position: absolute;
+    top: 33px;
+    left: -1px;
+    padding: 0 10px;
+    width: 74px;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 0 1px 1px 1px;
+    background-color: #fff;
+    display: none;
+}
+
+#quick-menu .submenu a:hover {
+    color: #ff0036;
+    text-decoration: underline;
+}
+
+
 
 
 

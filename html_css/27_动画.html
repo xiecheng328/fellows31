@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            border: 1px dashed;
+            margin: 100px auto;
+        }
+
+        .box2{
+            background: #ff0000;
+            transition: all 2s linear;
+        }
+        .box2:hover{
+            /*width: 400px;*/
+            /*height: 400px;*/
+            background: #00ff00;
+            transform: scale(2, .5) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <div class="box box2">唯创</div>
+    </div>
+</body>
+</html>
