@@ -164,11 +164,11 @@
     left: -150px;
     text-align: center;
     line-height: 30px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease;
+    -webkit-transition: opacity .3s ease, left .3s ease;
+    -moz-transition: opacity .3s ease, left .3s ease;
+    -ms-transition: opacity .3s ease, left .3s ease;
+    -o-transition: opacity .3s ease, left .3s ease;
+    transition: opacity .3s ease, left .3s ease;
     opacity: 0;
     visibility: hidden;
 }

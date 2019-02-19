@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #list{
+            /*height: 22px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+            /*display: inline-block;*/
+            /*overflow: hidden;*/
+        }
+        #list li{
+            float: left;
+            /*width: 150px;*/
+        }
+
+        #wcwx{
+            /*clear: both; !* 清除浮动 *!*/
+        }
+
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<ul id="list" class="clearfix">
+    <li>01</li>
+    <li>02</li>
+    <li>03</li>
+    <li>04</li>
+    <li>05</li>
+</ul>
+<span>spanspan</span>
+<h1 id="wcwx">唯创</h1>
+</body>
+</html>
+<!--
+BFC:块级格式化上下文 Block Fromatting Context
+
+1、float的值不是none。
+2、position的值不是static或者relative。
+3、display的值是inline-block、table-cell、flex、table-caption或者inline-flex
+4、overflow的值不是visible
+-->
+
