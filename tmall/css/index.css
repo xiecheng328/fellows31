@@ -164,11 +164,12 @@
     left: -150px;
     text-align: center;
     line-height: 30px;
-    -webkit-transition: opacity .3s ease, left .3s ease;
-    -moz-transition: opacity .3s ease, left .3s ease;
-    -ms-transition: opacity .3s ease, left .3s ease;
-    -o-transition: opacity .3s ease, left .3s ease;
-    transition: opacity .3s ease, left .3s ease;
+    /*-webkit-transition: opacity .3s ease, left .3s ease;*/
+    /*-moz-transition: opacity .3s ease, left .3s ease;*/
+    /*-ms-transition: opacity .3s ease, left .3s ease;*/
+    /*-o-transition: opacity .3s ease, left .3s ease;*/
+    transition: all .3s ease;
+    /*transition: opacity .3s ease, left .3s ease;*/
     opacity: 0;
     visibility: hidden;
 }
@@ -194,6 +195,110 @@
 }
 
 /* side-bar 结束 */
+
+
+/* logo-search 开始 */
+#logo-search .wrapper {
+    position: relative;
+}
+
+#logo-search .logo, #logo-search .search {
+    float: left;
+}
+
+#logo-search .search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#logo-search .search-form {
+    width: 623px;
+    height: 36px;
+    border: 2px solid #ff0036;
+}
+
+#logo-search .search-input {
+    width: 483px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    text-indent: 10px;
+}
+
+#logo-search .search-btn {
+    width: 132px;
+    height: 100%;
+    background: #ff0036;
+    color: #fff;
+    border: 0;
+    float: right;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+#logo-search .hot-query {
+    margin-top: 5px;
+}
+
+#logo-search .hot-query li {
+    float: left;
+    border-right: 1px solid #999;
+    padding: 0 12px;
+}
+
+#logo-search .hot-query a {
+    color: #999;
+    font-size: 14px;
+}
+
+#logo-search .hot-query .last {
+    border-right: none;
+}
+
+#logo-search .hot-query li:first-child {
+    padding-left: 0;
+}
+
+#logo-search .hot-query .hot-query-highlight a {
+    color: #ff0036;
+}
+
+/* logo-search 结束 */
+
+/* main-nav 开始 */
+#main-nav {
+    height: 35px;
+    line-height: 35px;
+}
+
+#main-nav .wrapper {
+    margin-left: 200px;
+}
+
+#main-nav li {
+    float: left;
+    padding: 0 8px;
+}
+
+#main-nav .nav-img {
+    width: 100px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+#main-nav li a {
+    color: #000;
+}
+
+
+/* main-nav 结束 */
 
 
 
