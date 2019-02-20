@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dialog-container{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .3);
+            display: none;
+        }
+
+        .dialog-content{
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+        .dialog-title{
+            background: #000000;
+            color: #fff;
+        }
+
+        #dialog:target{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="#dialog">注册</a>
+    <h1>唯创网讯</h1>
+    <div id="dialog" class="dialog-container">
+        <div class="dialog-content">
+            <div class="dialog-title">注册</div>
+            <div class="dialog-item"></div>
+        </div>
+    </div>
+</body>
+</html>
