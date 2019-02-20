@@ -212,6 +212,10 @@ body {
     float: left;
 }
 
+#logo-search .logo {
+    margin-left: -45px;
+}
+
 #logo-search .search {
     position: absolute;
     top: 50%;
@@ -347,7 +351,7 @@ body {
 
 #banner .product {
     width: 200px;
-    height: 500px;
+    height: 536px;
     background-color: rgba(0, 0, 0, .55);
     position: absolute;
     top: -36px;
@@ -361,6 +365,7 @@ body {
 
 #banner .product li {
     color: #fff;
+    padding-left: 5px;
 }
 
 #banner .product li a {
@@ -368,7 +373,9 @@ body {
 }
 
 #banner .product .type {
-    padding: 3px 0;
+    height: 31.2px;
+    line-height: 31.2px;
+    cursor: pointer;
 }
 
 #banner .product .type:hover {
@@ -376,6 +383,10 @@ body {
 }
 
 #banner .product .type:hover a {
+    color: #ff0036;
+}
+
+#banner .product .type:hover .iconfont {
     color: #ff0036;
 }
 
