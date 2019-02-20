@@ -166,7 +166,7 @@ body {
     background: #999999;
     color: #fff;
     position: absolute;
-    top: 215px;
+    top: 200px;
     left: -150px;
     text-align: center;
     line-height: 30px;
@@ -261,6 +261,7 @@ body {
     float: left;
     border-right: 1px solid #999;
     padding: 0 12px;
+    line-height: 1.1;
 }
 
 #logo-search .hot-query a {
