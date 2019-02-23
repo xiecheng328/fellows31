@@ -20,6 +20,7 @@
         // var : variable
         // 弱类型
         // 基本类型: number string boolean(true/false) undefined null
+        // 引用类型
 
         /* var a = 5;
         // document.write(a);
@@ -104,8 +105,109 @@
         s1 += "!!!!"; // s1 = s1 + "!!!!"
         alert(s1); */
 
-        var a = 5;
-        console.log(a /= 6); //  a = a / 6;
+        /* var a = 5;
+        console.log(a /= 6); //  a = a / 6; */
+
+        /*  var a = 5;
+         console.log(a++); // a = a + 1; a+=1
+         console.log(a);
+ 
+         2 == '2' */
+
+        /* var result = prompt('请输入一个数', 100);
+        console.log(result); */
+
+        /* var a = 5,b = 6;
+        if (a < 4) {
+            a++;
+            b--;
+        } else {
+            a--;
+        }
+        console.log(a); */
+
+        /* var a = 5, b = 6;
+        var c = a > b ? a : b;
+        console.log(c); */
+        // a < 4 ? a++ : a--;
+
+        /* var age = prompt('请输入你的年龄');
+        if (age < 18) {
+            console.log('未成年');
+        } else if (age >= 18 && age <= 30) {
+            console.log('青年');
+        } else if (age > 30 && age < 60) {
+            console.log('中年');
+        } else {
+            console.log('老年');
+        } */
+
+        /* var age = prompt('请输入你的年龄');
+        // console.log(typeof age);
+        switch (age) {
+            case '10':
+                console.log('10岁');
+                break;
+            case '20':
+                console.log('20岁');
+                break;
+            case '30':
+                console.log('30岁');
+                break;
+            case 'a':
+            case 'A':
+                console.log('输入的是a');
+            default:
+                console.log('默认值');
+        } */
+
+        /* for (var i = 1; i <= 5; i++) {
+            console.log(i);
+        } */
+        // console.log(i);
+
+        /* for (var i = 10; i >= 0; i--) {
+            console.log(i);
+        } */
+
+        // 1+2+3+...+10
+
+        /* var sum = 0;
+        for (var i = 1; i <= 10; i++) {
+            sum += i; // sum = sum + i;
+        }
+        console.log(sum); */
+
+        /*  var i = 0;
+         while(i > 10){
+             console.log(i++);
+         } */
+
+        /* var i = 0;
+        do {
+            console.log(i++);
+        } while (i > 10); */
+
+        // 函数
+        /* function sum(x, y) { // 形参
+            var result = x + y;
+            return result;
+            // console.log(result);
+        }
+        var aa = sum(3, 4); // 实参
+        console.log(aa);
+
+        sum(3, 4);//console.log
+        sum(5, 6);//document.write() */
+
+        var a;
+        function foo() {
+            a = 5;
+        }
+        foo();
+        console.log(a);
+
+
 
 
     </script>
