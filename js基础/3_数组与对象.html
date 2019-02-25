@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .list li {
+            list-style: none;
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /* var array = [5, 6, 'weichuang', true, undefined, [7, 8, 9]];
+        // console.log(array[0]);
+
+        for (var i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        } */
+
+        /* var arr = new Array();
+        arr[0] = 'xx';
+        arr[1] = 5;
+        console.log(arr); */
+
+        /* var arr = new Array(4, 5, 6);
+        console.log(arr); */
+
+        /*  var arr = new Array(4); // 数组长度为4
+         console.log(typeof arr); */
+
+        // 对象 object
+        // key value
+        /* var person = {
+            age: 33,
+            name: 'xiecheng',
+            code: function () {
+                console.log('coding...');
+            }
+        };
+
+        // console.log(person.name);
+        // person.code();
+        console.log(person['age']); */
+
+
+        /* var productList = [
+            {
+                name: '电脑',
+                price: 5000
+            }, {
+                name: '裤子',
+                price: 200
+            }, {
+                price: 8888,
+                name: 'iphone'
+            }
+        ];
+
+        document.write("<ul class='list'>");
+        for (var i = 0; i < productList.length; i++) {
+            // console.log(productList[i].price);
+            document.write('<li>' + productList[i].name + ':' + productList[i].price + '</li>');
+        }
+        document.write('</ul>');
+
+        var obj = new Object(); // new Array
+
+
+        var fellows31 = [{
+            name: 'a',
+            sex: '女',
+            school: 'xx',
+            tel: '13123456789'
+        },{
+            name: 'a',
+            sex: '女',
+            school: 'xx',
+            tel: '13123456789'
+        }, {
+            name: 'a',
+            sex: '女',
+            school: 'xx',
+            tel: '13123456789'
+        },{
+            name: 'a',
+            sex: '女',
+            school: 'xx',
+            tel: '13123456789'
+        }, {
+            name: 'a',
+            sex: '女',
+            school: 'xx',
+            tel: '13123456789'
+        }]; */
+
+        var person = {
+            age: 33,
+            name: 'xiecheng',
+            code: function () {
+                console.log('coding...');
+            }
+        };
+
+        for (var p in person) {
+            console.log(p + ':' + person[p]); // person.p
+        }
+
+
+    </script>
+</body>
+
+</html>
