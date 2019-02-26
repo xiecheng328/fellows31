@@ -75,9 +75,79 @@
         for (x += 1; x < 6; x = 1) {
             console.log(123);
         } */
-        for (var i = 0,j = 10; i = j = 10; i++ , j-- ){
+        /* for (var i = 0,j = 10; i = j = 10; i++ , j-- ){
             
+        } */
+
+        /*  function fn1(){
+             return function fn2(){
+                 var a = 5;
+                 return a;
+             }
+         }
+         var newFn2 = fn1();
+         console.log(newFn2()); */
+
+
+        /* function a(b){
+            console.log('a');
+            b(function(){
+                console.log('c');
+            });
         }
+
+        a(function(c){
+            console.log('b');
+            c();
+        }); */
+
+        /* function fn1(){
+            var a = 5;
+        }
+
+        function fn2(){
+            var a = 6;
+        } */
+
+        /* var a = 5;
+        var a = 6;
+        console.log(a); */
+
+
+        /* var fn = function(){
+            console.log(123);
+        }; */
+
+        /* (function(){
+            console.log(123);
+        })(); // 函数立即调用 */
+
+        // console.log(window);
+
+
+        /* (function() {
+            var a = 5;
+            var b = 6;
+            function aaa() {
+
+            }
+        })();
+
+
+        console.log(window); */
+
+        /* var a = 5;
+        (function(xx){
+            console.log(xx);
+        })(a); */
+
+
+        function f() {
+            console.log(arguments[0], arguments[1], arguments[2]);
+        }
+
+        f(4, 5, 6);
+
 
 
 
