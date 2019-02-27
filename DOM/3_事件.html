@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: #ff0000;
+        }
+    
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <input type="text" id="username">
+    学校: 
+    <select name="" id="school">
+        <option value="">黑大</option>
+        <option value="">林大</option>
+        <option value="">农大</option>
+    </select>
+
+    <ul id="menu">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+    </ul>
+
+    <div id="div1">唯创</div>
+
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){ // 事件处理函数
+            console.log(Math.random());
+        };
+
+        var oUserName = document.getElementById('username');
+        oUserName.onfocus = function(){
+            console.log('获取焦点');
+        };
+        oUserName.onblur = function(){
+            console.log('失去焦点');
+        };
+
+        oUserName.onkeyup = function(e){
+            console.log(e.keyCode); // 键盘码
+        };
+
+        var oSchool = document.getElementById('school');
+        oSchool.onchange = function(){
+            console.log('onchange');
+        };
+
+        window.onresize = function(){
+            console.log(Math.random());
+        };
+
+
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+            // oDiv1.style.background = '#f00';
+            oDiv1.className = 'red';
+        };
+
+        
+    
+    </script>
+</body>
+</html>
