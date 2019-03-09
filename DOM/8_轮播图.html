@@ -44,6 +44,24 @@
             background: #ff0036;
 
         }
+        #prev,#next{
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            line-height: 20px;
+            color:#fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #prev{
+            left:5px;
+        }
+        #next{
+            left:30px;
+        }
     </style>
 </head>
 <body>
@@ -62,8 +80,47 @@
             <li>4</li>
             <li>5</li>
         </ul>
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
     </div>
 
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var aImg = document.getElementsByTagName('img');
+        var oNext = document.getElementById('next');
+        // 记录当前显示的索引
+        var iNow = 0;
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].idx = i;
+            aLi[i].onclick = function(){
+                for(var j=0;j<aLi.length; j++){
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+
+                this.className = "active";
+                aImg[this.idx].className = "selected";
+            }
+        }
+
+        oNext.onclick = function() {
+            iNow++;
+            // 点击到最后一张图  回到第一张图
+            if(iNow == aLi.length){
+                iNow = 0;
+            }
+            for(var i=0; i<aLi.length;i++){
+                aLi[i].className = "";
+                aImg[i].className = "";
+            }
+            aLi[iNow].className = "active";
+            aImg[iNow].className = "selected";
+        }
+
+
+        
+
+    </script>
 
 
 
