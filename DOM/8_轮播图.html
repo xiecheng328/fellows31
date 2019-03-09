@@ -85,12 +85,14 @@
     </div>
 
     <script>
+        var oContainer = document.getElementById('container');
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
         var oNext = document.getElementById('next');
         var oPrev = document.getElementById('prev');
         // 记录当前显示的索引
         var iNow = 0;
+        var timer;
         for(var i=0; i<aLi.length; i++){
             aLi[i].idx = i;
             aLi[i].onclick = function(){
@@ -129,10 +131,21 @@
             aLi[num].className = "active";
             aImg[num].className = "selected";
         }
-
-
-        
-
+        // 初始进来 开启一个定时器
+        run();
+        // 划入停止轮播  清楚定时器
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        // 划出继续轮播  重新开启定时器
+        oContainer.onmouseout = function(){
+            run();
+        }
+        function run() {
+            timer = setInterval(function(){
+                oNext.onclick();
+            },1000);
+        }
     </script>
 
 
