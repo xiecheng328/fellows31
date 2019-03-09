@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #container{
+            width: 300px;
+            height: 300px;
+            background: #cccccc;
+        }
+        ul{
+            /* height:50px;     */
+            overflow: hidden;
+        }
+        li{
+            list-style: none;
+            /* display: inline-block; */
+            float: left;
+            width: 80px;
+            height: 40px;
+            margin-right:3px;
+            background: #ff0000;
+            text-align: center;
+            line-height: 40px;
+        }
+        li.active{
+            background: #00ff00;
+
+        }
+        #content div{
+            width: 300px;
+            height: 260px;
+            background: #00ff00;
+            display: none;
+        }
+        #content .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- 点击按钮 -->
+        <ul>
+            <li class="active">1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+        <!-- 内容区域 -->
+        <div id="content">
+            <div class="selected">1111的内容</div>
+            <div>2222的内容</div>
+            <div>3333的内容</div>
+        </div>
+    </div>
+    
+</body>
+</html>

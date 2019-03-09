@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        DOM document Object model
+
+
+     -->
+
+     <div id="div1">
+         111111
+     </div>
+     <ul>
+         <li>111</li>
+         <li class="aa">222</li>
+         <li class="aa">111</li>
+         <li>222</li>
+     </ul>
+
+     <input name="user" value="哈哈"/>
+
+     <button id="btn">click</button>
+     <script>
+         
+        var oDiv1 = document.getElementById('div1'); //返回的是dom对象 null 空对象
+
+        var aLi = document.getElementsByTagName('p'); //返回的是数组  没有返回[];
+
+        console.log(aLi);
+
+        var a = document.getElementsByClassName('aa'); //返回的是数组  没有返回[];
+
+        var aUser = document.getElementsByName('user');  //返回的是数组  没有返回[];
+
+       
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            oDiv1.style.background = "red";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+ 
+
+
+</body>
+</html>
