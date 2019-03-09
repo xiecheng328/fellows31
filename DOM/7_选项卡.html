@@ -55,9 +55,9 @@
         </ul>
         <!-- 内容区域 -->
         <div id="content">
-            <div  class="selected">1111的内容</div>
-            <div>2222的内容</div>
-            <div>3333的内容</div>
+            <div class="aa selected">1111的内容</div>
+            <div class="aa">2222的内容</div>
+            <div class="aa">3333的内容</div>
         </div>
     </div>
     
@@ -68,7 +68,9 @@
         
         var aLi = document.getElementsByTagName('li');
         var oContent = document.getElementById('content');
-        var aDiv = oContent.getElementsByTagName('div');
+        // var aDiv = oContent.getElementsByTagName('div');
+        var aDiv = document.getElementsByClassName('aa');
+
 
         for(var i=0; i<aLi.length; i++){  //页面初始 循环绑定事件  i = 3;
             aLi[i].index = i;//所以li添加一个 自定义属性index 
@@ -77,12 +79,12 @@
                 // 所有li的active清掉
                 for(var j=0; j<aLi.length; j++){
                     aLi[j].className = "";
-                    aDiv[j].className = "";
+                    aDiv[j].className = "aa";
                 }
                 // 自己加上active
                 this.className = "active";
                 // 讲aDiv数组中索引是 this.index 显示
-                aDiv[this.index].className = "selected";
+                aDiv[this.index].className = "aa selected";
             }
         }
 
