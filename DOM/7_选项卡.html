@@ -61,5 +61,26 @@
         </div>
     </div>
     
+
+    <script>
+        // 定义变量 没有赋值 
+        // 访问数组中的  越界
+        
+        var aLi = document.getElementsByTagName('li');
+
+        for(var i=0; i<aLi.length; i++){  //页面初始 循环绑定事件  i = 3;
+            aLi[i].onclick = function(){
+                //this 对当前对象的引用 
+                // 所有li的active清掉
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = "";
+                }
+                // 自己加上active
+                this.className = "active";
+            }
+        }
+
+    </script>
+
 </body>
 </html>
