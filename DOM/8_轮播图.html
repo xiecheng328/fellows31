@@ -88,18 +88,21 @@
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
         var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
         // 记录当前显示的索引
         var iNow = 0;
         for(var i=0; i<aLi.length; i++){
             aLi[i].idx = i;
             aLi[i].onclick = function(){
-                for(var j=0;j<aLi.length; j++){
-                    aLi[j].className = "";
-                    aImg[j].className = "";
-                }
-
-                this.className = "active";
-                aImg[this.idx].className = "selected";
+                // for(var j=0;j<aLi.length; j++){
+                //     aLi[j].className = "";
+                //     aImg[j].className = "";
+                // }
+                // // this.className = "active";
+                // aLi[this.idx].className = "active" 
+                // aImg[this.idx].className = "selected";
+                change(this.idx);
+                iNow = this.idx;
             }
         }
 
@@ -109,12 +112,22 @@
             if(iNow == aLi.length){
                 iNow = 0;
             }
+            change(iNow);
+        }
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = aLi.length-1;
+            }
+            change(iNow);
+        }
+        function change(num){
             for(var i=0; i<aLi.length;i++){
                 aLi[i].className = "";
                 aImg[i].className = "";
             }
-            aLi[iNow].className = "active";
-            aImg[iNow].className = "selected";
+            aLi[num].className = "active";
+            aImg[num].className = "selected";
         }
 
 
