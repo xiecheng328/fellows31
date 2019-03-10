@@ -94,6 +94,8 @@
     <script src="jslib.js"></script>
     <script>
         var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
+
         var oImgBox = document.getElementById('img-box');
         var aImg = oImgBox.getElementsByTagName('img');
         var aLi = document.getElementsByTagName('li');
@@ -105,6 +107,16 @@
                 oImgBox.style.left = 0;
                 // 显示索引是1的图片 也就是第二张图
                 iNow = 1;
+            }
+            change(iNow);
+        }
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow == -1){
+                // 迅速left拽到显示第六张图
+                oImgBox.style.left = -(aImg.length-1)*750 +"px";
+                // iNow设置成第五张图的索引
+                iNow = aImg.length-2;
             }
             change(iNow);
         }
