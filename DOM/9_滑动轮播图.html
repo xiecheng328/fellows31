@@ -19,6 +19,11 @@
         }
         #img-box{
             width:3750px;
+            position: absolute;
+            left:0;
+            top:0;
+            /* left  属性 变化 过度效果 */
+            transition: left 1s ease ;
         }
         #img-box img{
             float: left;
@@ -64,7 +69,6 @@
         #next{
             left:30px;
         }
-        
     </style>
 </head>
 <body>
@@ -86,6 +90,27 @@
         <span id="prev">&lt;</span>
         <span id="next">&gt;</span>
     </div>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oImgBox = document.getElementById('img-box');
+        // 0  1      i
+        // 0  -750   -i*750
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = "";
+                }
+                // 1 按钮自己变色
+                this.className = "active";
+                // 图片 显示
+                oImgBox.style.left = -this.index *750+"px";
+            }
+        }
+
+
+    </script>
 
 </body>
 </html>
