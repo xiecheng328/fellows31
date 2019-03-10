@@ -94,20 +94,39 @@
     <script>
         var aLi = document.getElementsByTagName('li');
         var oImgBox = document.getElementById('img-box');
+        var oNext = document.getElementById('next');
+        var iNow = 0;
         // 0  1      i
         // 0  -750   -i*750
         for(var i=0; i<aLi.length; i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
-                for(var j=0; j<aLi.length; j++){
-                    aLi[j].className = "";
-                }
-                // 1 按钮自己变色
-                this.className = "active";
-                // 图片 显示
-                oImgBox.style.left = -this.index *750+"px";
-                // oImgBox.style.transform = "translateX(-"+ this.index*750 +"px)";
+                // for(var j=0; j<aLi.length; j++){
+                //     aLi[j].className = "";
+                // }
+                // // 1 按钮自己变色
+                // this.className = "active";
+                // // 图片 显示
+                // oImgBox.style.left = -this.index *750+"px";
+                // // oImgBox.style.transform = "translateX(-"+ this.index*750 +"px)";
+
+                change(this.index);
+                iNow = this.index;
             }
+        }
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow == aLi.length){
+                iNow = 0;
+            }
+            change(iNow);
+        }
+        function change(num){
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].className = "";
+            }
+            aLi[num].className ="active";
+            oImgBox.style.left = -num *750 +"px";
         }
 
 
