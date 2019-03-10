@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #container{
+            position: relative;
+            height:570px;
+        }
+        #container img{
+            width:100%;
+        }
+        #imgs div{
+            position: absolute;
+            left:0px;
+            top:0px;
+            width:100%;
+            transition: opacity 2s ease;
+        }
+
+        #nav{
+            position: absolute;
+            left:50%;
+            /* top:95%; */
+
+            bottom:50px;
+            transform: translateX(-50%);
+        }
+        #nav li {
+            width: 25px;
+            height: 5px;
+            background-color: #000;
+            opacity: .5;
+            filter: alpha(opacity=50);
+            float: left;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        #nav .selected{
+            background: #ffffff;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <div id="container">
+        <div id="imgs">
+            <div class="banner1 actived">
+                <img src="https://img.alicdn.com/simba/img/TB1xIQMvH5YBuNjSspoSuveNFXa.jpg" alt="">
+            </div>
+            <div class="banner2">
+                <img src="http://img.alicdn.com/imgextra/i1/114/TB2wYu7c8cXBuNjt_XoXXXIwFXa_!!114-0-luban.jpg_q100.jpg_.webp" alt="">
+            </div>
+            <div class="banner3">
+                <img src="http://img.alicdn.com/tps/i4/TB17ITUFuuSBuNjSsplSuve8pXa.jpg" alt="">
+            </div>
+        </div>
+        <ul id="nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oImgs = document.getElementById('imgs');
+        //  banner
+        var aImg = oImgs.getElementsByTagName('div');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = "";
+                    aImg[j].style.opacity = "0";
+                }
+                this.className = "selected";
+                aImg[this.index].style.opacity = "1";
+            }
+        }
+    </script>
+</body>
+
+</html>
