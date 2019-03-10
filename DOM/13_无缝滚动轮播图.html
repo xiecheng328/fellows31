@@ -95,16 +95,29 @@
     <script>
         var oNext = document.getElementById('next');
         var oImgBox = document.getElementById('img-box');
+        var aImg = oImgBox.getElementsByTagName('img');
+        var aLi = document.getElementsByTagName('li');
         var iNow = 0;
         oNext.onclick = function(){
             iNow++; 
+            if(iNow == aImg.length){
+                // 迅速拽到第一张图
+                oImgBox.style.left = 0;
+                // 显示索引是1的图片 也就是第二张图
+                iNow = 1;
+            }
             change(iNow);
         }
-
         function change(num){
+            // 变图片
             animate(oImgBox,{
                 left: -num*750
             });
+            // 变按钮
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+            }
+            aLi[num==5?0:num].className = "active";
             // oImgBox.style.left = -num*750 +"px";
         }
 
