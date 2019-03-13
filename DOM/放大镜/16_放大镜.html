@@ -80,30 +80,26 @@
                 oDrag.style.left = x +"px";
                 oDrag.style.top = y +"px";
 
-
                 // 1 drag 能走的最大距离  oSmall - oDrag
                 var smallMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
+                var smallMaxY = oSmallBox.offsetHeight - oDrag.offsetHeight;
 
                 // 2 大图 能走的最大距离  大图的宽度 - oImgBox 
                 var bigMax = oBigImg.offsetWidth - oBigBox.offsetWidth;
+                var bigMaxY = oBigImg.offsetHeight - oBigBox.offsetHeight;
+
                 // 3求出 drag 走的比例 
-
                 var xBili = oDrag.offsetLeft/smallMax;
-
-                // 4.求大图应该走的距离
-
-                oBigImg.style.left = - bigMax*xBili +"px";
-
+                var yBili = oDrag.offsetTop/smallMaxY;
                 
-
-
-
-
-
-
-
-
+                // 4.求大图应该走的距离
+                oBigImg.style.left = - bigMax*xBili +"px";
+                oBigImg.style.top = - bigMaxY*yBili +"px";
             }
+        }
+        oSmallBox.onmouseout = function(){
+            oDrag.style.display = "none";
+            oBigBox.style.display = "none";
         }
 
     </script>
