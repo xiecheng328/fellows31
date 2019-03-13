@@ -32,7 +32,14 @@
             top:0px;
             display: none;
         }
-
+        #bigBox{
+            position: relative;
+        }
+        #bigImg{
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
     </style>
 </head>
 <body>
@@ -41,14 +48,17 @@
         <span id="drag"></span>
     </div>
     <div id="bigBox">
-        <img src="imgs/2.jpg"/>
+        <img id="bigImg" src="imgs/2.jpg"/>
     </div>
 
     <script>
         var oSmallBox = document.getElementById('smallBox');
         var oDrag = document.getElementById('drag');
+        var oBigBox = document.getElementById('bigBox');
+        var oBigImg = document.getElementById('bigImg');
         oSmallBox.onmouseover = function(){
             oDrag.style.display = "block";
+            oBigBox.style.display = "block";
             oSmallBox.onmousemove = function(e){
                 var x = e.clientX - oDrag.offsetWidth/2;
                 var y = e.clientY - oDrag.offsetHeight/2;
@@ -69,6 +79,30 @@
                 }
                 oDrag.style.left = x +"px";
                 oDrag.style.top = y +"px";
+
+
+                // 1 drag 能走的最大距离  oSmall - oDrag
+                var smallMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
+
+                // 2 大图 能走的最大距离  大图的宽度 - oImgBox 
+                var bigMax = oBigImg.offsetWidth - oBigBox.offsetWidth;
+                // 3求出 drag 走的比例 
+
+                var xBili = oDrag.offsetLeft/smallMax;
+
+                // 4.求大图应该走的距离
+
+                oBigImg.style.left = - bigMax*xBili +"px";
+
+                
+
+
+
+
+
+
+
+
             }
         }
 
