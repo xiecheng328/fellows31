@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #smallBox{
+            width: 400px;
+            height:400px;
+            float: left;
+            position: relative;
+        }
+        #bigBox{
+            width:400px;
+            height:400px;
+            float: left;
+            overflow: hidden;
+            display: none;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.4);
+            position: absolute;
+            left:0px;
+            top:0px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="smallBox">
+        <img src="imgs/1.jpg"/>
+        <span id="drag"></span>
+    </div>
+    <div id="bigBox">
+        <img src="imgs/2.jpg"/>
+    </div>
+
+    
+
+
+</body>
+</html>
