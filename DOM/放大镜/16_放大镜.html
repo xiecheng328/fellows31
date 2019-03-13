@@ -44,7 +44,38 @@
         <img src="imgs/2.jpg"/>
     </div>
 
-    
+    <script>
+        var oSmallBox = document.getElementById('smallBox');
+        var oDrag = document.getElementById('drag');
+        oSmallBox.onmouseover = function(){
+            oDrag.style.display = "block";
+            oSmallBox.onmousemove = function(e){
+                var x = e.clientX - oDrag.offsetWidth/2;
+                var y = e.clientY - oDrag.offsetHeight/2;
+                if(x < 0){
+                    x = 0
+                }
+                if(y < 0){
+                    y = 0
+                }
+                // x、y轴最大值 
+                var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
+                var yMax = oSmallBox.offsetHeight - oDrag.offsetHeight;
+                if(x > xMax){
+                    x = xMax;
+                }
+                if(y > yMax){
+                    y = yMax;
+                }
+                oDrag.style.left = x +"px";
+                oDrag.style.top = y +"px";
+            }
+        }
+
+    </script>
+
+
+
 
 
 </body>
