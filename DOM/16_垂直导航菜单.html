@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 200px;
+        }
+        h2{
+            background: #000000;
+            color:#fff;
+        }
+        ul{
+            border:1px solid #000;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>管理区</h2>
+        <ul >
+            <li>1111</li>
+            <li>2222</li>
+            <li>33333</li>
+        </ul>
+        <h2>交流区</h2>
+        <ul>
+            <li>1111</li>
+            <li>2222</li>
+            <li>33333</li>
+        </ul>
+    </div>
+    <script>
+        var aH2 = document.getElementsByTagName('h2');
+        var aUl = document.getElementsByTagName('ul');
+        for(var i=0; i<aH2.length; i++){ 
+            aH2[i].index = i;
+            aH2[i].onclick = function(){
+                var oUl = aUl[this.index];
+                // 如果 初始进来  取到display == ""  或者是 隐藏的时候  =>显示
+                if(oUl.style.display == "" || oUl.style.display == "none"){
+                    // 写在内联样式上 
+                    oUl.style.display = "block";
+                }else if(oUl.style.display == "block"){
+                    oUl.style.display = "none";
+                }
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
