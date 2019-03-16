@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托</title>
+    <style>
+    ul{
+        background: #ff0000;
+        
+    }
+    li{
+        background: #00ff00;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>1111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+
+
+    <script>
+        // 后生成元素的事件绑定问题
+        var aLi = document.getElementsByTagName('li');
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementById('ul1'); 
+       
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+        // oBtn.onclick = function(){
+        //     var oLi = document.createElement('li');
+        //     oLi.innerHTML = Math.random();
+        //     oUl.appendChild(oLi);
+        // }
+
+        /* 事件委托 事件绑定到已经存在的父元素身上，
+        点击子元素的时候事件冒泡  会触发父元素的点击事件
+        通过事件源e.target 判断点击的是否是Li 
+
+        解决后生成元素的事件绑定问题 
+        只绑一个事件
+        */
+
+        oUl.onclick = function(e){
+            e = e || window.event;
+            // console.log(111)
+            var target = e.target || e.srcElement;
+            // console.log(target.tagName)
+            if(target.tagName == 'LI'){
+                console.log(target.innerHTML);
+            }
+        }
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+
+      
+
+
+
+
+    </script>
+
+
+</body>
+</html>
