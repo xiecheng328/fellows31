@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件  事件源  事件处理函数
+        事件冒泡 点击子元素会触发父元素的点击事件（父子关系）
+     -->
+     <div id="div1">
+         div1
+         <div id="div2">div2</div>
+     </div>
+     <a id="link" href="http://www.baidu.com">百度</a>
+     <script>
+         
+        var oDiv  = document.getElementById('div1');
+        oDiv.onclick = function(e){
+            console.log(e.clientX);
+            // 点击事件中  谁的点击事件 this
+            console.log(this); //div1
+            console.log(e.target); //div2 事件源
+        }
+        var oA = document.getElementById('link');
+        oA.onclick = function(e){
+            console.log('dfghjkl');
+            // 标准浏览器
+            e.preventDefault();
+            // ie取消默认行为
+            e.returnValue = false;
+            // 阻止默认行为 
+            // return false;
+        }
+
+         
+     </script>
+</body>
+</html>
