@@ -29,16 +29,17 @@
      </div>
      <a id="link" href="http://www.baidu.com">百度</a>
      <script>
-         
         var oDiv  = document.getElementById('div1');
         oDiv.onclick = function(e){
             console.log(e.clientX);
             // 点击事件中  谁的点击事件 this
             console.log(this); //div1
-            console.log(e.target); //div2 事件源
+            console.log(e.target ); //div2 事件源
+            // e.srcElement
         }
         var oA = document.getElementById('link');
         oA.onclick = function(e){
+            e = e || window.event
             console.log('dfghjkl');
             // 标准浏览器
             e.preventDefault();
@@ -48,7 +49,14 @@
             // return false;
         }
 
-         
+        document.onkeydown = function(e){
+            e = e || window.event;
+            // console.log(e.altKey);
+            // 键盘码 
+            console.log(e.keyCode);
+
+
+        }
      </script>
 </body>
 </html>
