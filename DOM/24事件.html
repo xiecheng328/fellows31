@@ -31,10 +31,11 @@
      <script>
         var oDiv  = document.getElementById('div1');
         oDiv.onclick = function(e){
+            e = e ||window.event;
             console.log(e.clientX);
             // 点击事件中  谁的点击事件 this
             console.log(this); //div1
-            console.log(e.target ); //div2 事件源
+            console.log(e.target||e.srcElement ); //div2 事件源
             // e.srcElement
         }
         var oA = document.getElementById('link');
