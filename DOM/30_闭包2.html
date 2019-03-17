@@ -22,16 +22,18 @@
         // })()
         var aLi = document.getElementsByTagName('li');
         for (var i = 0; i < aLi.length; i++) {
-            (function(i){
+            (function(aa){
                 // 外部函数中的形参  局部
                 aLi[i].onclick = function () {
                     // 内部函数引用外部函数中的形参i 这使得这个i在外部函数执行完以后不会是否
-                    console.log(i);
+                    console.log(aa);
                 }
             })(i);
             // aLi[i].onclick = function () {
             //     console.log(i);
             // }
+
+            // a(i)
         }
 
 
