@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+
+<body>
+    <ul>
+        <li>1111111</li>
+        <li>22222</li>
+        <li>3333</li>
+    </ul>
+
+    <script>
+        // 函数的立即调用
+        // (function(){
+
+        // })()
+        var aLi = document.getElementsByTagName('li');
+        for (var i = 0; i < aLi.length; i++) {
+            (function(i){
+                // 外部函数中的形参  局部
+                aLi[i].onclick = function () {
+                    // 内部函数引用外部函数中的形参i 这使得这个i在外部函数执行完以后不会是否
+                    console.log(i);
+                }
+            })(i);
+            // aLi[i].onclick = function () {
+            //     console.log(i);
+            // }
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
