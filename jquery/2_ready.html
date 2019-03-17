@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 事件 等页面中所有的资源都加载完毕
+        // window.onload = function () {
+        //     // var oDiv = document.getElementById('div1');
+        //     // oDiv.onclick = function () {
+        //     //     console.log(1111);
+        //     // }
+        //     console.log(111);
+        // }
+        // window.onload = function () {
+        //     console.log(2222);
+        // }
+
+        // 文档就绪函数 等页面中文档结构加载完就执行 不等资源
+        $(document).ready(function(){
+            console.log(1111);
+        });
+        $(document).ready(function(){
+            console.log(2222);
+        });
+
+        $(function(){
+            console.log(3333);
+        })
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="div1">
+        haha
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1992085767,102835282&fm=27&gp=0.jpg">
+    </div>
+    <script>
+    </script>
+
+
+
+</body>
+
+</html>
