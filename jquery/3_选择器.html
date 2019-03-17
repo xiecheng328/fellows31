@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            /* display: none; */
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="aa">1111</li>
+        <li class="bb">22</li>
+        <li class="cc">333</li>
+        <li class="dd">444</li>
+        <li class="aa">555</li>
+    </ul>
+    <div id="div1">
+        haha
+    </div>
+    <div id="div2">
+        hehe
+    </div>
+    <input type="text">
+    <input type="password">
+    <input type="file"/>
+
+
+    <button>haha</button>
+    <button disabled>haha</button>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("#li2+li").css("background","red");
+
+        // $("li[class=aa]").css("background","pink");
+        //  1    2   4    
+        // $("li:nth-child(2n)").css("background","pink");
+        // $("ul li:first-child").css("background","pink");
+
+        // $("ul li:eq(0)").css("background","purple");
+        // li中索引是偶数 
+        // $("ul li:first").css("background","purple");
+        // $("ul li:first").css("background","purple");
+        $("ul li:not(.cc)").css("background","purple");
+        $(":input")
+    </script>
+
+
+
+</body>
+
+</html>
