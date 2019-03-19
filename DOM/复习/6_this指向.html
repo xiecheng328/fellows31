@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #div1{
+            background: #ff0000;
+        }
+        #div2{
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        fghj
+        <div id="div2">
+            hahahah 
+        </div>
+    </div>
+    <script>
+        // 1.普通函数  指向window
+        
+        function a(){
+            console.log(this)
+        }
+        a();
+        // 2.定时器  指向window
+        setTimeout(function(){
+            console.log(this);
+        }, 100);
+
+        // 3.对象  obj
+        var obj = {
+            name:'zs',
+            age:30,
+            say:function(){
+                console.log(this);
+            }
+        }
+        obj.say();
+        // 4 事件中 
+
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+            console.log(this);
+        }
+        // 5类中 实例化对象
+        function Person(name){
+            this.name = name
+        }
+        var p1 = new Person('zs');
+        var p2 = new Person('lisi');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="div1" name="div1111" >edrftyguhijkol</div> -->
+    <input id="div1" name="aaaaaa"/>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+
+        var name = "The Window";
+        　　
+        var object = {　　　　
+            name: "My Object",
+            getNameFunc: function () {　　　　　　
+                return function () {　　　　　　　　
+                    console.log(this.name);　　　　　　
+                };
+            }
+        };
+
+        oDiv.onclick = object.getNameFunc();
+        // 点击div1输出啥？
+
+
+    </script>
+</body>
+
+</html>

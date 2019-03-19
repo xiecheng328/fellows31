@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111111</li>
+        <li>22222</li>
+        <li>33333</li>
+    </ul>
+    <script>
+        // 外部函数中有一个内部函数  内部函数引用外部函数中的局部变量，
+        // 就使得外部函数中的变量不释放，一直存在内存中
+
+        // function a(){
+        //     var x = 100;
+        //     return function(){
+        //         console.log(++x);
+        //     }
+        // }
+
+        // // a();
+
+        // var b = a();
+        // b();
+        // b();
+        var aLi = document.getElementsByTagName('li');
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].index = i
+        //     aLi[i].onclick = function(){
+        //         console.log(this.index);
+        //     }
+        // }
+
+        for (var i = 0; i < aLi.length; i++) {
+            (function (i) {
+                // i=0
+                aLi[i].onclick = function () {
+                    console.log(i);
+                }
+            })(i);
+            // a(i)
+        }
+    </script>
+
+</body>
+
+</html>
