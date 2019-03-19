@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            background: #ff0000;
+        }
+        li{
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementById('ul1');
+
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+
+        // 后生成元素的事件绑定问题 
+
+        // 1 事件绑定在父元素身上 ，2 点击子元素的时候 通过事件冒泡会触发父元素的点击事件
+        // 3 通过事件源判断点击的元素 
+
+
+        oUl.onclick = function(e){
+            // console.log(111111);
+            // 如果点击的元素是Li再输出li的innerHTML
+            e = e ||window.event;
+            target = e.target || e.srcElement;
+            if(target.tagName == "LI"){
+                console.log(target.innerHTML);
+            }
+        }
+
+
+
+
+        
+    </script>
+
+    
+</body>
+</html>
