@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .red{
+            background: #ff0000;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
     <input type="text" value="请输入用户名"/>
@@ -13,9 +19,15 @@
         // 链式操作
         $('input').on('focus',function(){
             // $(this).val("");
-            this.value = "";
+            $(this).addClass('red');
+            if(this.value == this.defaultValue){
+                this.value = "";
+            }
         }).on('blur',function(){
-            this.value = this.defaultValue;
+            $(this).removeClass('red');
+            if(this.value == ""){
+                this.value = this.defaultValue;
+            }
         });
         
 
