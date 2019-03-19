@@ -10,12 +10,31 @@
             background: #ff0000;
             outline: none;
         }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        .aa{
+            border:10px solid #000;
+        }
     </style>
 </head>
 <body>
+    <div id="div1">dfghjk</div>
     <input type="text" value="请输入用户名"/>
     <script src="jquery-1.12.4.js"> </script>
     <script>
+        $('#div1').on('click',function(){
+            // 切换样式
+            // $(this).toggleClass('aa');
+            // $(this).css("background","green");
+            $(this).css({
+                background:'green',
+                opacity:0.5,
+                width:800
+            });
+        })
         // 链式操作
         $('input').on('focus',function(){
             // $(this).val("");
@@ -29,6 +48,8 @@
                 this.value = this.defaultValue;
             }
         });
+
+
         
 
 
