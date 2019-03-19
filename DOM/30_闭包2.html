@@ -34,7 +34,43 @@
             // }
             // a(i)
         }
+
+
+
+       
+
+        String.prototype.repeat = function(num){
+            console.log(num);
+        }
+
+        var str = "123";
+        // conso
+        str.repeat(3); 
+
+
+
+
+
+
+
         
+
+
+
+
+
+
+
+
+
+
+        String.prototype.repeat = function(len){
+            var result = "";
+            for(var i=0; i<len;i++){
+                result+= this;
+            }
+            return result;
+        }
 
     </script>
 

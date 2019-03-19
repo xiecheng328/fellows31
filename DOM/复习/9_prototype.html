@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // String 构造函数的原型下 添加的方法 可以被所有实例化对象 共享
+        String.prototype.repeat = function(num){
+            // console.log(num);
+            var result = ""
+            for(var i=0; i<num;i++){
+                result += this.valueOf();
+            }
+            return result;
+        }
+        // 实例化对象
+        var str = "123"; 
+        // conso
+        console.log(str.repeat(4)); 
+    </script>
+    
+</body>
+</html>
