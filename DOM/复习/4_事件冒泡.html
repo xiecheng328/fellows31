@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        // 冒泡 从里向外   捕获是从外到里
+        // 既有冒泡又有捕获  先捕获再冒泡  事件流是先从外到里  再从里向外
+        oDiv1.addEventListener('click',function(){
+            console.log('div1 捕获')
+        },true);
+        oDiv2.addEventListener('click',function(){
+            console.log('div2 捕获')
+        },true);
+        oDiv1.addEventListener('click',function(){
+            console.log('div1 冒泡')
+        },false);
+        oDiv2.addEventListener('click',function(){
+            console.log('div2 冒泡')
+        },false);
+
+        
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

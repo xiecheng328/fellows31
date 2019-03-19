@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p>aaaaaaa</p>
+    </div>
+    <script>
+        // 节点
+
+        // oDiv 
+        // 节点的遍历
+
+        // oDiv.nextSibling
+        // oDiv.previousSibling
+        // oDiv.firstChild
+        // oDiv.lastChild
+        // oDiv.children
+
+        // 节点的操作
+        // createElement()
+        // appendChild()
+        // replaceChild(newNode,oldNode)
+        // removeChild()
+        // insertBefore()
+
+        var oDiv = document.getElementById('div1');
+        var oH1 = document.createElement('h1');
+        var oP = document.getElementsByTagName('p')[0];
+        oH1.innerHTML = "dfghjkl;"
+        // oDiv.appendChild(oH1);
+        // oDiv.replaceChild(oH1,oP);
+        // oDiv.removeChild(oP);
+        oDiv.insertBefore(oH1,oP);
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>

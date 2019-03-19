@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var cat1 = {
+        //     name:'多啦A梦',
+        //     age:30,
+        //     fly:function(){
+        //         console.log('fei.....');
+        //     }
+        // }
+
+        // var cat2 = {
+        //     name:'hello kitty',
+        //     age:18
+        // }
+
+        // cat1.fly();
+
+
+        // 类  属性写在构造函数中  方法写在原型下
+        /* 原型   所有构造函数都有一个prototype 属性，指向原型对象 ，
+            声明在原型对象下的属性和方法能被 所有实例化对象所共享
+        */
+
+        function Cat(name){
+            this.name = name;
+        }
+
+        Cat.prototype.eat = function(){
+            console.log(this.name +" eating....");
+        }
+
+        var cat1 = new Cat("多啦");
+
+        cat1.eat();
+        
+
+        var cat2 = new Cat("hello");
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
