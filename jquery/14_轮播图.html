@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 750px;
+            height: 291px;
+            margin:100px auto;
+            position: relative;
+        }
+        #img-box img{
+            display: none;
+        }
+        #img-box .selected{
+            display: block;
+        }
+        #btn-box{
+            list-style: none;
+            position: absolute;
+            right:10px;
+            bottom:10px;
+        }
+        #btn-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            margin-right:5px;
+            cursor: pointer;
+        }
+        #btn-box .active{
+            background: #ff0036;
+
+        }
+        #prev,#next{
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            line-height: 20px;
+            color:#fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #prev{
+            left:5px;
+        }
+        #next{
+            left:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img-box">
+            <img class="selected" src="../DOM/img/1.jpg">
+            <img src="../DOM/img/2.jpg">
+            <img src="../DOM/img/3.jpg">
+            <img src="../DOM/img/4.jpg">
+            <img src="../DOM/img/5.jpg">
+        </div>
+        <ul id="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        var iNow = 0;
+        var $img = $('#img-box img');
+        var $li = $('#btn-box li');
+        $li.on('click',function(){
+            var $index = $(this).index();
+            change($index);
+            // $(this).addClass('active').siblings().removeClass('active');
+            // $('#img-box img').eq($index).show().siblings().hide();
+        })
+
+        $('#next').on('click',function(){
+            iNow++;
+            if(iNow == $li.length){
+                iNow = 0;
+            }
+            change(iNow);
+        });
+
+        function change(num){
+            $li.eq(num).addClass('active').siblings().removeClass('active');
+            $img.eq(num).show().siblings().hide();
+        }
+
+        
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
