@@ -50,18 +50,22 @@
         // },false);
         // 事件冒泡 从里向外 
 
-        oDiv1.addEventListener('click',function(){
-            console.log(111+"捕获");
-        },true);
-        oDiv2.addEventListener('click',function(){
-            console.log(222+"捕获");
-        },true);
+        // oDiv1.addEventListener('click',function(){
+        //     console.log(111+"捕获");
+        // },true);
+        // oDiv2.addEventListener('click',function(){
+        //     console.log(222+"捕获");
+        // },true);
         // 事件捕获  从外到里 (ie不支持事件捕获)
         oDiv1.addEventListener('click',function(){
             console.log(111+"冒泡");
         },false);
-        oDiv2.addEventListener('click',function(){
+        oDiv2.addEventListener('click',function(e){
             console.log(222+"冒泡");
+            // 阻止事件冒泡 标准浏览器
+            e.stopPropagation();
+            // ie浏览器
+            e.cancelBubble = true;
         },false);
         // 既有捕获 又有冒泡  先捕获再冒泡 （先从外到里 再从里往外 ）
 
