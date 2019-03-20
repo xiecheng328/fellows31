@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 12px/19px Arial, Helvetica, sans-serif;
+            color: #666;
+        }
+
+        .tab {
+            width: 240px;
+            margin: 50px;
+        }
+
+        .tab_menu {
+            clear: both;
+        }
+
+        .tab_menu li {
+            float: left;
+            text-align: center;
+            cursor: pointer;
+            list-style: none;
+            padding: 1px 6px;
+            margin-right: 4px;
+            background: #F1F1F1;
+            border: 1px solid #898989;
+            border-bottom: none;
+        }
+
+        .tab_menu li.hover {
+            background: #DFDFDF;
+        }
+
+        .tab_menu li.selected {
+            color: #FFF;
+            background: #6D84B4;
+        }
+
+        .tab_box {
+            clear: both;
+            border: 1px solid #898989;
+            height: 100px;
+        }
+
+        .hide {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_menu">
+            <ul>
+                <li class="selected">11</li>
+                <li>222</li>
+                <li>333</li>
+            </ul>
+        </div>
+        <div class="tab_box">
+            <div>aaaaaa</div>
+            <div class="hide">bbbbbb</div>
+            <div class="hide">cccccccc</div>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('.tab_menu li').on('click',function(){
+            // 按钮变样式
+            $(this).addClass('selected').siblings().removeClass('selected');
+            // div变样式
+            // console.log($(this).index())
+            $('.tab_box div').eq($(this).index()).removeClass('hide')
+            .siblings().addClass('hide');
+        })
+
+    </script>
+
+</body>
+
+</html>

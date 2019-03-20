@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">
+        <span>fghjkl</span>
+        <div>
+            <span>aaaaaaa</span>
+        </div>
+    </div>
+    <ul>
+        <li>111111</li>
+        <li>2222</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    
+
+    // $('#div1').text('<h2>哈哈哈</h2>')
+
+    // $('li').eq(0).css("background",'red');
+
+    //    console.log( $('#div1').is('.bb') )
+
+//    console.log( $("#div1").children() )
+
+    // $('#div1').children().css('background','green').end().css('border',"5px solid #000");
+        // $('#div1').children('span').css('background','green')
+        // 后代元素 
+        $('#div1').find('span').css('background','green');
+
+        // $('#div1').next()
+
+        // $(this).index()
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
