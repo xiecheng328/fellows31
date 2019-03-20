@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="animate">animate</button>
+    <button id="stop">stop</button>
+    <button id="fade">fade</button>
+
+    <div id="div1">
+        aaaaaa
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('#btn').on('click',function(){
+            $('#div1').hide();
+        })
+        $('#show').on('click',function(){
+            $('#div1').show(1000);
+        });
+        $('#toggle').on('click',function(){
+            $('#div1').toggle(1000);
+        });
+
+        $('#animate').on('click',function(){
+            $('#div1').animate({
+                width:800,
+                opacity:0.3
+            },3000);
+            $('#div1').animate({
+                height:800,
+            },3000);
+
+            // console.log(1111);
+        });
+        
+        $('#stop').on('click',function(){
+            // clearQueue jumpToEnd
+            $('#div1').stop(false,true);
+        });
+        $('#fade').on('click',function(){
+            // $('#div1').fadeOut();
+            // $('#div1').fadeToggle(1000);
+            $('#div1').slideUp(1000);
+
+        })
+
+        // $('li').size()
+        // $('li').length
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

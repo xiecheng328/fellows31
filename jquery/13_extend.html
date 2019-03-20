@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        var object1 = {
+            apple: 0,
+            banana: {
+                weight: 52,
+                price: 100
+            },
+            cherry: 97
+        };
+        var object2 = {
+            banana: {
+                price: 200
+            },
+            durian: 100
+        };
+
+        /* merge object2 into object1 */
+        console.log($.extend(object1, object2));
+
+        // var object1 = {
+        //     apple: 0,
+        //     banana: {
+        //         price: 200
+        //     },
+        //     cherry: 97,
+        //     durian: 100
+        // };
+
+        
+    </script>
+
+</body>
+
+</html>
