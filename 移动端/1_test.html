@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        /*max-width:768px  <=768px 
+            min-width   >=768px 
+        */
+        /* @media screen and (min-width:768px){
+            #div1{
+                background: #0000ff;
+            }
+        }
+        @media screen and (max-width:320px){
+            #div1{
+                background: #0f0;
+            }
+        } */
+
+        @media screen and (orientation:portrait){
+            #div1{
+                background: pink;
+            }
+        }
+        @media screen and (orientation:landscape){
+            #div1{
+                background: green;
+            }
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        哈哈
+    </div>
+    
+</body>
+</html>
