@@ -72,9 +72,7 @@ p{
         height:0px;
         padding-top:56%;
         background-image: url('img/01_s_2x.jpg');
-
     }
-
 }
 @media screen and (max-width:480px){
     #left,#right{
