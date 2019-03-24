@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        /* 
+        *{
+            touch-action: none;
+        } 
+        */
         #div1{
             width: 200px;
             height: 200px;
@@ -19,13 +24,73 @@
     <script src="zepto.js"></script>
     <script src="touch.js"></script>
     <script>
-        $('#div1').on('click',function(){
-            console.log('div1 click');
-        })
-
+        // 点击事件  使用tap  移动端click会有300ms延时  300ms内再次点击 认为是双击事件
+        // $('#div1').on('click',function(){
+        //     console.log('div1 click');
+        // })
+        // // zepto封装的事件  
         $('#div1').on('tap',function(){
             console.log('div1 tap');
         })
+        $('#div1').on('singleTap',function(){
+            console.log('single tap');
+        })
+        $('#div1').on('doubleTap',function(){
+            console.log('double tap');
+        })
+        $('#div1').on('longTap',function(){
+            console.log('long tap');
+        })
+
+        // $('#div1').on('touchstart',function(){
+        //     console.log('touch start');
+        // })
+        // $('#div1').on('touchend',function(){
+        //     console.log('touch end');
+        // })
+        // $('#div1').on('touchmove',function(){
+        //     console.log('touch move');
+        // })
+        // // touch 取消事件
+        // $('#div1').on('touchcancel',function(){
+        //     console.log('touch move');
+        // })
+
+        // $("#div1").on('swipe',function(){
+        //     console.log('swipe');
+        // });
+        //  
+        // $("#div1").on('swipeLeft',function(){
+        //     console.log('swipe left');
+        // });
+        // $("#div1").on('swipeUp',function(){
+        //     console.log('swipe up');
+        // });
+
+        // $("#div1").on('swipeRight',function(){
+        //     console.log('swipe right');
+        // });
+        // $("#div1").on('swipeDown',function(){
+        //     console.log('swipe down');
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
 
 
 
