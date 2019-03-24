@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.page-1{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0px;
+    background: #083846;
+}
+.page-1 .img1{
+    width:248px;
+    position: absolute;
+    left:50%;
+    margin-left:-124px;
+    top: 1%;
+}
+.moveFromTop{
+    animation: moveFromTop 0.6s ease forwards;
+}
+@keyframes moveFromTop{
+    0%{
+        /* transform:  translate(-50%,-100%); */
+        transform:  translateY(-100%);
+    }
+}
+
+
+
+
