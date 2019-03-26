@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11111111</li>
+        <li class="aa">222222</li>
+        <li>33333</li>
+        <li class="aa">44444</li>
+    </ul>
+    <div class="aa">fghjkl;'lkujykll</div>
+
+    <script>
+
+        // var aLi = document.getElementsByClassName('aa');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.background = 'red';
+        // }
+
+        
+        function getEleByClassName(clsName){
+            var result = [];
+            var allEle = document.getElementsByTagName('*');
+            for(var i=0; i<allEle.length; i++){
+                // 如果元素的class名 == 参数clsName
+                if(allEle[i].className == clsName ){
+                    result.push(allEle[i]);
+                }
+            }
+            return result;
+        }
+
+        var aLi = getEleByClassName('aa');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].style.background = 'red';
+        }
+
+
+
+        
+    </script>
+    
+</body>
+</html>

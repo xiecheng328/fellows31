@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // var str = 'abc';
@@ -17,14 +19,14 @@
         // console.log(  reg2.exec(str2)   );
 
 
-        var reg = /c{3,4}/
-        var reg1 = /./
+        // var reg = /c{3,4}/
+        // var reg1 = /./
 
-        
 
-        var str = 'cccCcfgthyjkl';
 
-        console.log(  reg.exec(str)  );
+        // var str = 'cccCcfgthyjkl';
+
+        // console.log(reg.exec(str));
 
         /*
         c{n}
@@ -44,19 +46,30 @@
         . 除了/n以外的任意字符
 
         b|c表示,匹配b或者c
-
-
+        
+        字符集合[abc]  表示a或者b或者c中的任意一个字符
+        非字符集合[^abc] 表示不能 是a,b或者c中的任何一个
         */
 
+        // var reg = /[^abc]/;
+        // var str = 'blueidea';
+
+        // console.log(  reg.exec(str) );
+
+        // reg = /c\b/ ;
+        // // str = 'cainiao';
+        // str='bbbbbc hhhhh';
+
+        // console.log(  reg.exec(str)  );
 
 
-
-
+        
 
 
 
 
     </script>
-    
+
 </body>
+
 </html>
