@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+        
+</head>
+<body>
+    <div id="div1">dfgjhkjl;lkjgfh</div>
+    <script>
+        // fn();
+        // fn1();
+
+
+        // function fn(){
+        //     console.log(1111);
+        // }
+        // var fn1 = function(){
+        //     console.log(1111);
+        // };
+
+        // let fn = () =>{
+            
+        // }
+        var oDiv = document.getElementById('div1');
+        // oDiv.onclick = function(){
+        //     // this
+        //     setTimeout(function(){
+        //         console.log(this.innerHTML);
+        //     }.bind(this),1000);
+        // }
+        /*
+         普通函数中的this指向的是调用时的this
+         箭头函数中的this指向的是 声明时的this 
+         父作用域中的this
+        */
+
+        // oDiv.onclick = function(){
+        //     // this
+        //     setTimeout(() => {
+        //         console.log(this.innerHTML);
+        //     },1000);
+        // }
+
+        
+        // var obj = {
+        //     name:'zs',
+        //     age:20,
+        //     say:() => {
+        //         console.log(this);
+        //     }
+        // }
+        
+        var xx = 1;
+        var obj = {
+            name:'zs',
+            age:20,
+            xx:2,
+            say:() =>{
+                setTimeout(() => {
+                    console.log(this.xx);
+                },1000);
+            }
+        }
+
+
+
+
+        
+
+        obj.say();
+
+
+
+
+
+
+
+        
+
+
+        
+        
+
+
+
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
