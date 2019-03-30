@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="div1">
+        sdtfygyuhjkl
+    </div> -->
+
+    <ul>
+        <li>111111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+
+    <script>
+        // var oDiv = document.getElementById('div1');
+        var aLi = document.getElementsByTagName('li');
+        
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+
+        // for(var i=0; i<aLi.length; i++){
+        //     (function(num){
+        //         aLi[i].onclick = function(){
+        //             console.log(num);
+        //         }
+        //     })(i);
+        // }
+
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            }
+        }
+        // babel =>es5
+
+
+        
+
+
+
+
+
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>

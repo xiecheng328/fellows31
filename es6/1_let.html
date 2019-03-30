@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var和let 区别：
+        /*
+            1.let没有变量提升
+            2.let不能重复声明
+            3.let 有块级作用域
+        */
+        // 变量提升 var声明的变量 会有变量提升 （当前作用域的最上边声明变量）
+        // 
+        // console.log(a);
+        // var a = 10;
+        // console.log(a);
+
+        //  b is not defined 
+        // console.log(b);
+        // let b = 10;
+
+        // var a = 10;
+        // var a = 20;
+        // let a = 10;
+        // let a = 20;
+
+        // console.log(a);
+
+        /*全局作用域 和  函数作用域 
+
+            访问变量的时候  当前作用域中找，如果当前的作用域没有 找上一层（父作用域）中找
+            ，如果父作用域没有接着向上找 .... 直到找到window 如果window下也没有 会返回 z is not defined
+            这个查找的过程成为  作用域链
+        */
+        // var z = 30;
+        // function fn(){
+        //     var x = 10;//局部变量   
+        //     y = 20 //全局变量
+
+        //     console.log(z);
+        // }
+        // fn();
+        // // console.log(x);
+        // console.log(y);
+        // window  
+        // var c = 1
+        // function fn1(){
+        //     // var a = 10;
+        //     function fn2(){
+        //         var b = 20;
+        //         // var a = 30;
+        //         console.log(z);
+        //     }
+        //     fn2();
+        // }
+        // fn1();
+
+        // var x = true;
+        // if(x){
+        //     let a = 10;
+        //     console.log(a);
+        // }
+        // //  a is not defined
+        // console.log(a);
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
