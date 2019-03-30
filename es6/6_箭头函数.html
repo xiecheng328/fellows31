@@ -51,7 +51,6 @@
         //     },1000);
         // }
 
-        
         // var obj = {
         //     name:'zs',
         //     age:20,
@@ -59,25 +58,57 @@
         //         console.log(this);
         //     }
         // }
+        // var xx = 1;
+        // var obj = {
+        //     name:'zs',
+        //     age:20,
+        //     xx:2,
+        //     say:() =>{
+        //         setTimeout(() => {
+        //             console.log(this.xx);
+        //         },1000);
+        //     }
+        // }
+
+
+
+
         
-        var xx = 1;
-        var obj = {
-            name:'zs',
-            age:20,
-            xx:2,
-            say:() =>{
-                setTimeout(() => {
-                    console.log(this.xx);
-                },1000);
-            }
+
+        // obj.say();
+
+        // function Person(name){
+        //     this.name = name;
+        // }
+        // var p1 = new Person('zs');
+
+        // let Person = (name) => {
+        //     this.name = name;
+        // }
+
+        // let p1 = new Person();
+
+
+        // let a = (...rest) => {
+        //     // console.log(arguments);
+        //     console.log(rest);
+        // }
+
+        // a(1,2,3);
+        // 默认值  没有传参 或者传的参数是undefined
+        let a = (a,b,c=100) => {
+            console.log(a,b,c);
         }
+        a(1,2,undefined);
+
+        console.log(a.name);
+
+
 
 
 
 
         
-
-        obj.say();
 
 
 
