@@ -14,7 +14,7 @@
             1.let没有变量提升
             2.let不能重复声明
             3.let 有块级作用域
-            
+            4.临时失效区（暂时性死区）
         */
         // 变量提升 var声明的变量 会有变量提升 （当前作用域的最上边声明变量）
         // 
@@ -69,6 +69,27 @@
         // }
         // //  a is not defined
         // console.log(a);
+
+
+        // 4临时失效区（暂时性死区）  let声明的变量在当前作用域 不允许同名的变量进来
+
+        // let a = 10;
+        // function fn(){
+        //     // a is not defined
+        //     console.log(a);
+        //     let a = 20;
+        //     console.log(a);
+        // }
+        // fn();
+
+        var x = 100;
+        function fn2(){
+            console.log(x);
+            var x = 20;
+        }
+        fn2();
+
+        
 
 
 

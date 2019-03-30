@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+         /*
+            1.let没有变量提升
+            2.let不能重复声明
+            3.let 有块级作用域
+            4.临时失效区（暂时性死区）
+        */
+        // const定义常量  定以后不能修改
+        // const a = 10;
+        // a = 20;
+
+        // 引用数据类型 
+        // cosnt声明的引用数据类型  地址不能修改  但是地址中存的值能修改
+        const arr = [1,2,3];
+        
+        Object.freeze(arr);
+        arr[1] = 8;
+        console.log(arr);
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
