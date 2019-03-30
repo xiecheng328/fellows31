@@ -29,9 +29,9 @@
             for(var i=0; i<allEle.length; i++){
                 // 如果元素的class名 == 参数clsName
                 // "aa bb" == "aa"
-                // /\b/   '\b'
                 // new RegExp('a')
                 // clsName 前后都是边界
+                //"\b" 转成正则的\b代表边界
                 var reg = new RegExp('\\b'+clsName+'\\b');
                 var str = allEle[i].className;
                 if(reg.test(str)){ //reg匹配str 返回true 否则返回false  

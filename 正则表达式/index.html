@@ -19,12 +19,12 @@
         // console.log(  reg2.exec(str2)   );
 
 
-        // var reg = /c{3,4}/
+        // var reg = /c{3,4}/i
         // var reg1 = /./
 
 
 
-        // var str = 'cccCcfgthyjkl';
+        // var str = 'ccCcfgthyjkl';
 
         // console.log(reg.exec(str));
 
@@ -38,15 +38,11 @@
         c+ 和 c{1,} 是一个意思。
         ?  0个或1个
         c? 和 c{0,1} 是一个意思。
-
         非贪婪模式 c{n,m}？  表示数量的符号后加？  
-
         /^开头,结尾$/
-
         . 除了/n以外的任意字符
-
         b|c表示,匹配b或者c
-        
+
         字符集合[abc]  表示a或者b或者c中的任意一个字符
         非字符集合[^abc] 表示不能 是a,b或者c中的任何一个
         */
@@ -62,9 +58,20 @@
 
         // console.log(  reg.exec(str)  );
 
+        // ()子字符集 \1对第一个子字符集的反向引用
+        // b l
 
-        
+        // abba  cddc  0110 
+        // var reg = /(\w)(\w)/ ;
+        // var str = 'abbag';
+        // // var reg1 = /(\w)(\w)\1/ ;
+        // var reg2 = /(\w)(\w)\2\1/;
+    
+        // console.log(reg2.exec(str));
 
+
+        var str="1 plus 2 equal 3";
+        console.log(str.match(/\d+/g));
 
 
 
