@@ -42,6 +42,11 @@
         //     return index > 2;
         // })
 
+
+        // arr.find(function(val,index){
+        //     return index>2;
+        // })
+
         // console.log(x);
 
 
@@ -90,6 +95,32 @@
         })
 
         console.log(zzz);
+
+
+        console.log(+0===-0)
+        console.log(NaN ==NaN)
+
+        let arr5 = ['a', 'b', 'c', 'd', 'e'];
+        for([index,val] of arr.entries()){
+            console.log(index,val)
+        }
+
+
+        arr5.forEach(function(val,index){
+            console.log(val,index);
+        });
+
+
+        var result = arr5.map(function(val,index){
+            return val+"xxx";
+        })  
+
+        console.log(result);
+
+
+        arr5.filter(function(val,index){
+            
+        })
 
 
 

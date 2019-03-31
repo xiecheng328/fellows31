@@ -17,7 +17,7 @@
             4.临时失效区（暂时性死区）
         */
         // 变量提升 var声明的变量 会有变量提升 （当前作用域的最上边声明变量）
-        // 
+        //
         // console.log(a);
         // var a = 10;
         // console.log(a);
@@ -82,12 +82,24 @@
         // }
         // fn();
 
-        var x = 100;
-        function fn2(){
+        // var x = 100;
+        // function fn2(){
+        //     console.log(x);
+        //     var x = 20;
+        // }
+        // fn2();
+
+
+        var x = 10;
+
+        function fn(){
             console.log(x);
-            var x = 20;
+            var x = 10;
         }
-        fn2();
+
+        
+
+
 
         
 

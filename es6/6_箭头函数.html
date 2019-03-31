@@ -96,12 +96,28 @@
 
         // a(1,2,3);
         // 默认值  没有传参 或者传的参数是undefined
-        let a = (a,b,c=100) => {
-            console.log(a,b,c);
-        }
-        a(1,2,undefined);
+        // let a = (a,b,c=100) => {
+        //     console.log(a,b,c);
+        // }
+        // a(1,2,undefined);
 
-        console.log(a.name);
+        // console.log(a.name);
+
+
+        // let a = (x) => {
+        //     console.log(x);
+        // }
+
+        // let a = x => x;
+        let a = (x=1) => {
+            return x;
+        }
+        console.log(a());
+
+
+
+
+
 
 
 
