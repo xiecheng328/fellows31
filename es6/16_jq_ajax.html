@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+        // $.get('test.json',function(data){
+        //     console.log(data);
+        // },'json');
+
+        // console.log('hahahah');
+
+        $.get('xx.json', function (id) {
+            console.log(id);
+            $.get('xx2.json?name='+id, function (data) {
+                console.log(data);
+                // $.get()
+            }, 'json');
+        }, 'json');
+        
+        // ajax回调地狱
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
