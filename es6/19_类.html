@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log(this.name +" say")
+        }
+        var p1 = new Person('zs',20);
+        p1.say();
+        /*
+            子类的构造函数中 通过父类.call() 继承父类的属性 
+            子类的prototype = 父类的实例化对象 继承方法 
+            问题 原本子类的原型下的constructor指向构造函数 需要指回来
+        */
+        function Coder(name,age){
+            // this  =>c1
+            Person.call(this,name,age);
+        }
+        Coder.prototype = new Person();
+        Coder.prototype.constructor = Coder;
+
+        var c1 = new Coder('lisi',18);
+
+        c1.say();
+
+
+        
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
