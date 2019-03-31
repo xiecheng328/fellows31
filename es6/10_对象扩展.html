@@ -7,8 +7,84 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        var name = 'zs';
+        var obj = {
+            name:name,
+            age:20,
+            say:function(){
+                console.log('哈哈哈')
+            }
+        }
+
+        let obj1 = {
+            name,
+            age:20,
+            say(){
+                console.log('hehehe')
+            }
+        }
+        console.log(obj1.name);
+
+        obj1.say();
+
+
+        let a = 'xx';
+        let obj2 = {
+            [a+'aaaa']:'yyy'
+        }
+        // console.log(obj2.xx)
+        // 属性名是可变的 []
+        console.log(obj2);
+        var obj3 = {
+            name:'zs',
+            age:20,
+            school:'weichuang'
+        }
+
+
+        for( key in obj3){
+            console.log(obj3[key]);
+        }
     
-    
+        console.log(NaN === NaN);
+        console.log(+0 === -0);
+
+        console.log(Object.is(NaN,NaN));
+        console.log(Object.is(+0,-0));
+
+
+        let obj4 = {
+            name:'zs',
+            age:20
+        }
+        let obj5 = {
+            name:'lisi',
+            hobby:'敲代码'
+        }
+        // console.log({...obj4,...obj5});
+        console.log(Object.assign(obj4,obj5));
+        console.log(obj4);
+        console.log(obj5);
+        console.log( 'hobby' in obj4) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
 
 
     
