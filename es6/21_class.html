@@ -13,9 +13,11 @@
                 this.name = name;
                 this.age = age;
             }
+            // 方法
             say(){
                 console.log('hello');
             }
+            // 静态方法  Person.xx()
             static xx(){
                 console.log('xxx');
             }
@@ -23,7 +25,7 @@
 
         let p1 = new Person('xx',20);
         p1.say();
-
+        // 继承 extends  super//调用父类的构造函数 继承属性和方法
         class Coder extends Person{
             constructor(name,age) {
                 super(name,age);//调用父类的构造函数
