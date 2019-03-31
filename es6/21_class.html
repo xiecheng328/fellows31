@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            say(){
+                console.log('hello');
+            }
+            static xx(){
+                console.log('xxx');
+            }
+        }
+
+        let p1 = new Person('xx',20);
+        p1.say();
+
+        class Coder extends Person{
+            constructor(name,age) {
+                super(name,age);//调用父类的构造函数
+                this.shirt = "格子衬衫";
+            }
+            coding(){
+                console.log('我正在敲代码。。。。')
+            }
+        }
+        let c1 = new Coder('lisi',10);
+
+        console.log(c1);
+        c1.say();
+        c1.coding();
+        Person.xx();
+   
+
+    </script>
+</body>
+</html>
