@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        async function fn(){
+            console.log('开始');
+            await req1();
+            console.log('请求1 成功  可以开始请求2');
+            await req2();
+        }
+
+        fn();
+        async function req1(){
+            return new Promise(function(resolve,reject){
+                setTimeout(() => {
+                    console.log('请求1成功');
+                    resolve();
+                }, 1000);
+            })
+        }
+        async function req2(){
+            return new Promise(function(resolve,reject){
+                setTimeout(() => {
+                    console.log('请求2成功');
+                    resolve();
+                }, 2000);
+            })
+        }
+        
+    </script>
+
+    
+</body>
+</html>

@@ -8,23 +8,29 @@
 </head>
 <body>
     <script>
+        // function 与函数名之间有一个星号
         // fn返回的是指针对象 而不会执行函数内部逻辑
-        // 调用next方法函数内部逻辑开始执行，遇到yield表达式停止
+        // 调用next方法函数内部逻辑开始执行，遇到yield表达式停止，返回{value: yield后的表达式结果/undefined, done: false/true}
+        // yield语句返回结果通常为undefined， 当调用next方法时传参内容会作为启动时yield语句的返回值。
+
 
         // function * fn(){
         //     console.log('开始');
-        //     yield "哈哈";
+        //     let aaaa = yield "哈哈";
+        //     console.log(aaaa);
         //     console.log('yield 1结束');
         // }
         // let a = fn();
         // console.log( a.next() ); //{value: "哈哈", done: false}
-        // console.log( a.next() ); //{value: undefined, done: true}
+        // console.log( a.next("aaaaaaaaaaaa") ); //{value: undefined, done: true}
+    
 
 
         function * fn(){
             console.log('开始');
-            yield request1();
+            let data = yield request1();
             console.log('请求1已经成功 可以进行请求2');
+            yield req2(data);
         }
         let f = fn();
         console.log(  f.next()  ); //{value: undefined, done: false}
@@ -34,9 +40,15 @@
             setTimeout(() => {
                 let data = 100
                 console.log('请求1 成功 ,返回数据' +data);
-                console.log(  f.next()  );  // //{value: undefined, done: true}
+                console.log(  f.next(data)  );  // //{value: undefined, done: true}
             }, 1000);
         }
+        function req2(data){
+
+        }
+
+
+
 
 
 
