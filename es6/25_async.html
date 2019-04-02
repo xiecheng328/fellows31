@@ -11,7 +11,8 @@
     <script>
         async function fn(){
             console.log('开始');
-            await req1();
+            let result = await req1();
+            console.log(result);
             console.log('请求1 成功  可以开始请求2');
             await req2();
         }
@@ -20,7 +21,7 @@
             return new Promise(function(resolve,reject){
                 setTimeout(() => {
                     console.log('请求1成功');
-                    resolve();
+                    resolve(111111);
                 }, 1000);
             })
         }
