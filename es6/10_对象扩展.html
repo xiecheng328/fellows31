@@ -8,6 +8,8 @@
 </head>
 <body>
     <script>
+
+        
         var name = 'zs';
         var obj = {
             name:name,
@@ -33,7 +35,7 @@
         let obj2 = {
             [a+'aaaa']:'yyy'
         }
-        // console.log(obj2.xx)
+        // console.log(obj2[a])
         // 属性名是可变的 []
         console.log(obj2);
         var obj3 = {
@@ -62,11 +64,21 @@
             name:'lisi',
             hobby:'敲代码'
         }
-        // console.log({...obj4,...obj5});
-        console.log(Object.assign(obj4,obj5));
+
+        let obj6 = {...obj4,...obj5}
+
+        console.log(obj6);
         console.log(obj4);
-        console.log(obj5);
-        console.log( 'hobby' in obj4) ;
+
+        Object.assign(obj4,obj5);
+        console.log(obj4);
+
+
+        // console.log({...obj4,...obj5});
+        // console.log(Object.assign(obj4,obj5));
+        // console.log(obj4);
+        // console.log(obj5);
+        // console.log( 'hobby' in obj4) ;
 
 
 

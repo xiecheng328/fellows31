@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 
+        Person.prototype.say = function(){
+            console.log('hahaha');
+        }
+        // 实例化对象 
+        var p1 = new Person('zs',20);
+        p1.say();
+
+        // 继承 
+        function Coder(name,age){
+            Person.call(this,name,age);
+        }
+        Coder.prototype = new Person();
+        Coder.prototype.constructor = Coder;
+
+        var c1 = new Coder('lisi',18);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
