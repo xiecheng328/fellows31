@@ -4,6 +4,7 @@ $attr:width;
 $xx:xx;
 body{
     // background: $color;
+    /*aaaaa*/
     height:100px;
     // color:$color;
     #{$attr}:100px;
@@ -52,6 +53,28 @@ body{
 .cc{
     @include border(100px,50px);
 }
+
+.dd{
+    @extend .bb;
+
+    color:#000;
+}
+
+%ff{
+    width:100px;
+    height:100px;
+}
+
+.gg{
+    @extend %ff;
+}
+.h{
+    @extend %ff;
+    color:darken(#f00,10);
+    height:floor(3.55)
+}
+
+
 
 
 
