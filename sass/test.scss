@@ -1,9 +1,46 @@
-$color:#f00;
-$len :100px;
-
+$color:#00f;
+$color:#f00 !default;
+$attr:width;
+$xx:xx;
 body{
-    background: $color;
+    // background: $color;
     height:100px;
-    width:100px;
-    
+    // color:$color;
+    #{$attr}:100px;
+    background:$color url(#{$xx}.jpg) 0 0 no-repeat;
+    #div1{
+        width: 200px;
+        height:200px;
+        background: #f00;
+        padding:{
+            top:50px;
+            left:20px;
+        };
+        a{
+            color:greenyellow;
+            &:hover{
+                color:#0dd;
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

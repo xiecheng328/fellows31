@@ -1,0 +1,21 @@
+body {
+  height: 100px;
+  width: 100px;
+  background: #00f url(xx.jpg) 0 0 no-repeat;
+}
+
+body #div1 {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  padding-top: 50px;
+  padding-left: 20px;
+}
+
+body #div1 a {
+  color: greenyellow;
+}
+
+body #div1 a:hover {
+  color: #0dd;
+}
