@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  /*aaaaa*/
+  height: 100px;
+  width: 100px; }
+  body #div1 {
+    width: 200px;
+    height: 200px;
+    background: #f00; }
+    body #div1 a {
+      color: greenyellow; }
+      body #div1 a:hover {
+        color: #0dd; }
+
+.aa {
+  width: 0px;
+  height: 0px;
+  border: 10px solid #000;
+  border-color: transparent;
+  border-top-color: #000; }
+
+.bb, .dd {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #ccc;
+  border-radius: 10px;
+  background: #f00; }
+
+.cc {
+  width: 100px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-radius: 10px; }
+
+.dd {
+  color: #000; }
+
+.gg, .h {
+  width: 100px;
+  height: 100px; }
+
+.h {
+  color: #cc0000;
+  height: 3; }
+
+.ii {
+  width: 700px; }
+
+.jj {
+  width: 100px;
+  height: 100px; }
+
+.kk {
+  width: 1000px; }
+
+.item1 {
+  width: 20px; }
+
+.item2 {
+  width: 40px; }
+
+.item3 {
+  width: 60px; }
+
+.item4 {
+  width: 80px; }
+
+.nav1 {
+  width: 20px; }
+
+.nav2 {
+  width: 40px; }
+
+.nav3 {
+  width: 60px; }
+
+.nav4 {
+  width: 80px; }
+
+.nav5 {
+  width: 100px; }
+
+.aa-5 {
+  width: 100px; }
+
+.aa-4 {
+  width: 80px; }
+
+.aa-3 {
+  width: 60px; }
+
+.aa-2 {
+  width: 40px; }
+
+.aa-1 {
+  width: 20px; }
+
+.success {
+  background: url(success.jpg); }
+
+.error {
+  background: url(error.jpg); }
+
+.warn {
+  background: url(warn.jpg); }
+
+/*# sourceMappingURL=test.css.map */

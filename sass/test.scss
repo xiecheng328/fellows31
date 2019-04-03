@@ -14,10 +14,7 @@ body{
         width: 200px;
         height:200px;
         background: #f00;
-        padding:{
-            top:50px;
-            left:20px;
-        };
+   
         a{
             color:greenyellow;
             &:hover{
@@ -67,6 +64,50 @@ body{
 .ii{
     width:add(300px,400px);
 }
+.jj{
+    width:300px-200px;
+    height:(300px/3);
+
+}
+
+$i:10;
+
+@if($i == 10){
+    .kk{
+        width:$i*100px;
+    }
+}
+
+@for $j from 1 to 5{
+    .item#{$j}{
+        width:20px*$j;
+    }
+}
+@for $k from 1 through 5{
+    .nav#{$k}{
+        width:20px*$k;
+    }
+}
+
+$m:5;
+@while ($m>0) {
+    .aa-#{$m}{
+        width:20px*$m;
+    }
+    $m:$m - 1;
+}
+
+$list:success error warn;
+
+@each $xx in $list {
+    .#{$xx}{
+        background:url(#{$xx}.jpg);
+    }
+}
+
+
+
+
 
 
 
