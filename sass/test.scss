@@ -7,7 +7,7 @@ body{
     height:100px;
     // color:$color;
     #{$attr}:100px;
-    background:$color url(#{$xx}.jpg) 0 0 no-repeat;
+    // background:$color url(#{$xx}.jpg) 0 0 no-repeat;
     #div1{
         width: 200px;
         height:200px;
@@ -23,7 +23,40 @@ body{
             }
         }
     }
+
+
 }
+
+@mixin triangle {
+    width:0px;
+    height:0px;
+    border:10px solid #000;
+    border-color: transparent;
+    border-top-color: #000;
+}
+
+.aa{
+    @include triangle();
+}
+
+@mixin border($w:200px,$h:200px){
+    width:$w;
+    height:$h;
+    border:5px solid #ccc;
+    border-radius: 10px;
+}
+.bb{
+    @include border();
+    background: #f00;
+}
+.cc{
+    @include border(100px,50px);
+}
+
+
+
+
+
 
 
 
