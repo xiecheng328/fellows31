@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   /*aaaaa*/
   height: 100px;
@@ -55,4 +60,8 @@ body #div1 a:hover {
 .h {
   color: #cc0000;
   height: 3;
+}
+
+.ii {
+  width: 700px;
 }

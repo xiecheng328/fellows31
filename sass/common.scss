@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@mixin triangle {
+    width:0px;
+    height:0px;
+    border:10px solid #000;
+    border-color: transparent;
+    border-top-color: #000;
+}
+
+@mixin border($w:200px,$h:200px){
+    width:$w;
+    height:$h;
+    border:5px solid #ccc;
+    border-radius: 10px;
+}
