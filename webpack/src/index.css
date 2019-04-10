@@ -1,3 +1,6 @@
 body{
     background:red url(./images/bbb.jpg);
 }
+img{
+    transform: rotate(30deg);
+}
