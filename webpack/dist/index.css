@@ -1,9 +1,18 @@
+/*! 唯创所有！！ */
 html {
-  background: red; }
-body{
-    background:red url(images/55afa07b978fd1da3a8f88bfce085270.jpg);
+  background: red;
 }
-img{
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
+
+body {
+  background: red url(images/55afa07b978fd1da3a8f88bfce085270.jpg);
+}
+
+img {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.a {
+  width: 100px;
+  height: 200px;
 }
