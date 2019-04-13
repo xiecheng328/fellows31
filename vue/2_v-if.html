@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ msg }}
+
+        <div v-if="isLogin">唯创网讯</div>
+        <div v-else>请登录</div>
+
+        <div v-show="isLogin">v-show指令</div>
+
+        <div v-if="str == 'A'">A</div>
+        <div v-else-if="str == 'B'">B</div>
+        <div v-else-if="str == 'C'">C</div>
+        <div v-else>D</div>
+
+    </div>
+    
+    
+
+    <script src="vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app', // 挂载元素
+            data: {
+                msg: 'Hello World',
+                isLogin: false,
+                str: 'A'
+            }
+        });
+    
+    
+    </script>
+</body>
+</html>
