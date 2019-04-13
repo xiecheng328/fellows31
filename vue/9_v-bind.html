@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="imgUrl" alt="">
+
+        <button @click="toggle">toggle</button>
+        <div :class="{red: isRed}">唯创网讯</div>
+
+        <div :style="styleObj">唯创</div>
+    </div>
+
+
+
+    <script src="vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app', // 挂载元素
+            data: {
+                imgUrl: 'https://cn.vuejs.org/images/logo.png',
+                isRed: true,
+                styleObj: {
+                    background: '#f00',
+                    color: '#0f0',
+                    'font-size': '30px'
+                }
+            },
+            methods: {
+                toggle(){
+                    this.isRed = !this.isRed;
+                }
+            },
+        });
+
+
+    </script>
+</body>
+
+</html>
