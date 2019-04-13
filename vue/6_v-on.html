@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+
+        #child{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click.once="onClickHandler(2, $event)">点我+1</button>
+        <input type="number" v-model="num" @keyup.enter="keyup($event)">
+        <h1>{{ count }}</h1>
+
+        <div id="parent" @click.stop="onClickParent">
+            <div id="child" @click.stop="onClickChild"></div>
+        </div>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                num: 0
+            },
+            methods: {
+                onClickHandler(n, e){
+                    // console.log(Math.random());
+                    this.count += n;
+                    console.log(e);
+                },
+                keyup(e){
+                    // console.log(e.keyCode)
+                    // if(e.keyCode == 13){ // 回车
+                        this.count += parseInt(this.num);
+                    // }
+                },
+                onClickParent(){
+                    console.log('parent 被点击');
+                },
+                onClickChild(){
+                    console.log('child 被点击');
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>

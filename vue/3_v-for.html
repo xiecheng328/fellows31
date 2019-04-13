@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ msg }}
+        <div v-for="(item, index) in arr">
+            {{ item }} {{ index }}
+        </div>
+
+
+        <div v-for="user in listSort">
+            {{ user.name }} {{ user.age }}
+            <button @click="showName(user)">showName</button>
+        </div>
+
+        <div v-for="(attr, key) in dog">
+            {{ attr }} {{ key }}
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 类 对象
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                arr: ['html', 'css', 'javascript'],
+                list: [
+                    {
+                        name: '张三',
+                        age: 28
+                    }, {
+                        name: '李四',
+                        age: 40
+                    }, {
+                        name: '王五',
+                        age: 30
+                    }
+                ],
+                dog: {
+                    name: 'wangcai',
+                    age: 2
+                }
+            },
+            computed: {
+                listSort(){
+                    return this.list.sort((a, b) => {
+                        return a.age - b.age;
+                    });
+                }
+            },
+            methods: {
+                showName(obj){
+                    console.log(obj);
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
