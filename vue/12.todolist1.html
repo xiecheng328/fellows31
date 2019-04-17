@@ -45,7 +45,7 @@
                 <td>删除</td>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in showList" :key="item" @click="change(item)" :class="{red:item.isRed}">
+                <tr v-for="(item, index) in showList" :key="item.id" @click="change(item.id)" :class="{red:item.isRed}">
                     <td>
                         <input type="checkbox" v-model="item.isRed">
                     </td>
@@ -77,93 +77,98 @@
                 productList: [{
                     name: '衣服',
                     price: 123,
-                    isRed: false
+                    isRed: false,
+                    id:1
                 }, {
                     name: '裤子',
                     price: 234,
-                    isRed: false
+                    isRed: false,
+                    id:2
                 }, {
                     name: '手机',
                     price: 8888,
-                    isRed: false
+                    isRed: false,
+                    id:3
                 }, {
                     name: '鞋',
                     price: 777,
-                    isRed: false
+                    isRed: false,
+                    id:4
                 }],
                 // 用来显示的数组
                 showList:[{
                     name: '衣服',
                     price: 123,
-                    isRed: false
+                    isRed: false,
+                    id:1
                 }, {
                     name: '裤子',
                     price: 234,
-                    isRed: false
+                    isRed: false,
+                    id:2
                 }, {
                     name: '手机',
                     price: 8888,
-                    isRed: false
+                    isRed: false,
+                    id:3
                 }, {
                     name: '鞋',
                     price: 777,
-                    isRed: false
+                    isRed: false,
+                    id:4
                 }],
                 proName: '',
                 proPrice: 0,
                 searchName:''
             },
             methods: {
-                add() {
-                    // 取到name  和 price添加到  productList数组中
+                add(){
                     this.productList.push({
-                        name: this.proName,
-                        price: Number.parseFloat(this.proPrice),
-                        isRed: false
-                    })
-                    this.showList = [...this.productList];
-                },
-                change(item) {
-                    item.isRed = !item.isRed;
-                },
-                delChecked() {
-                    // 因为删除后 索引变化了  所以此方法不可以 
-                    // this.productList.forEach((obj,index) => {
-                    //     if(obj.isRed){
-                    //         console.log(this);
-                    //         this.productList.splice(index,1);
-                    //     }
-                    // })
-                    let arr = this.productList.filter(function (obj, index) {
-                        // 过滤出所有isRed属性值为false 的元素 （没有被勾选的元素）
-                        return !obj.isRed;
-                    })
-                    this.productList = arr;
-                    this.showList = [...this.productList];
-                },
-                del(index) {
-                    this.productList.splice(index, 1);
-                    this.showList = [...this.productList];
-                },
-                filProduct(){
-                    let searchList = this.productList.filter((obj,index) => {
-                        // 查找商品名中包含搜索关键字的 
-                        return obj.name.includes( this.searchName )
+                        name:this.proName,
+                        price:this.proPrice,
+                        isRed:false,
+                        id:Symbol()
                     });
-                    this.showList = [...searchList];
+                    this.showList = [...this.productList];
+
+                },
+                change(id){
+                    console.log(111111);
+                    // 只改变了 showList中传进来的item
+                    // item.isRed = !item.isRed;
+                    // 传进来的是 将要修改的obj的id   productList数组obj中id是id  元素的isRed = !isRed;
+                    let changeList = this.productList.map(function(obj,index){
+                        if(obj.id == id){
+                            obj.isRed = !obj.isRed;
+                        }
+                        return obj;
+                    });
+                    this.productList = [...changeList];
+                    this.showList = [...changeList];
+                },
+                delChecked(){
+                    let arr = this.productList.filter(function(obj,index){
+                        return !obj.isRed;
+                    });
+
+                    this.productList = [...arr];
+                    this.showList = [...arr];
                 }
             },
-            computed: {
-                total() {
+            computed:{
+                total(){
                     let sum = 0;
-                    this.showList.forEach(function (obj, index) {
-                        if (obj.isRed) {
+                    this.showList.forEach(function(obj,index){
+                        if(obj.isRed){
                             sum += obj.price
                         }
                     })
                     return sum;
                 }
             }
+
+
+               
         });
     </script>
 
