@@ -24,6 +24,11 @@
         <div v-for="(attr, key) in dog">
             {{ attr }} {{ key }}
         </div>
+        <div v-for="(obj, index) in list">
+            {{ obj.name }} {{ obj.age }} {{index}}
+        </div>
+
+
     </div>
     <script src="vue.js"></script>
     <script>

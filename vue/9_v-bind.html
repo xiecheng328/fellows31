@@ -15,13 +15,14 @@
 
 <body>
     <div id="app">
-        <img :src="imgUrl" alt="">
+        <img :src="imgUrl" alt="" :id="xx">
 
         <button @click="toggle">toggle</button>
         <div :class="{red: isRed}">唯创网讯</div>
-
         <div :style="styleObj">唯创</div>
     </div>
+
+    
 
 
 
@@ -31,6 +32,7 @@
         new Vue({
             el: '#app', // 挂载元素
             data: {
+                xx:'xxxx',
                 imgUrl: 'https://cn.vuejs.org/images/logo.png',
                 isRed: true,
                 styleObj: {
