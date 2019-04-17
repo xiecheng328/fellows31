@@ -52,7 +52,7 @@
                     <td>{{item.name}}</td>
                     <td>{{item.price}}</td>
                     <td>
-                        <button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(index)"></button>
+                        <button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(item.id)"></button>
                     </td>
                 </tr>
                 <tr>
@@ -145,8 +145,6 @@
                     });
                     this.productList = [...changeList];
                     this.showList = [...changeList];
-
-                    
                 },
                 delChecked(){
                     let arr = this.productList.filter(function(obj,index){
@@ -155,6 +153,23 @@
 
                     this.productList = [...arr];
                     this.showList = [...arr];
+                },
+                del(id){
+                    // 删除数组中obj的id 是 id
+                    let delList = this.productList.filter(function(obj,index){
+                        return obj.id != id;
+                    });
+                    this.productList = [...delList];
+                    this.showList = [...delList];
+
+                },
+                filProduct(){
+                    let searchList = this.productList.filter((obj,index)=>{
+                        return obj.name.includes(this.searchName);
+                    });
+
+                    this.showList = [...searchList];
+                    this.searchName = "";
                 }
             },
             computed:{
@@ -168,8 +183,6 @@
                     return sum;
                 }
             }
-
-
                
         });
     </script>
