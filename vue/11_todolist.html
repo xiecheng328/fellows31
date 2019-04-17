@@ -45,8 +45,8 @@
                     <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button></td>
                 </tr>
                 <tr>
-                    <td><button type="button" class="btn btn-danger btn-xs">删除选中</button></td>
-                    <td colspan="3">总价是: 0 元</td>
+                    <td><button type="button" class="btn btn-danger btn-xs" @click="delChecked()">删除选中</button></td>
+                    <td colspan="3">总价是: {{total}} 元</td>
                 </tr>
             </tbody>
         </table>
@@ -89,13 +89,38 @@
                     // 取到name  和 price添加到  productList数组中
                     this.productList.push({
                         name:this.proName,
-                        price:this.proPrice
+                        price:this.proPrice,
+                        isRed:false
                     })
                 },
                 change(item){
                     item.isRed = !item.isRed;
+                },
+                delChecked(){
+                    // 因为删除后 索引变化了  所以此方法不可以 
+                    // this.productList.forEach((obj,index) => {
+                    //     if(obj.isRed){
+                    //         console.log(this);
+                    //         this.productList.splice(index,1);
+                    //     }
+                    // })
+                    let arr = this.productList.filter(function(obj,index){
+                        // 过滤出所有isRed属性值为false 的元素 （没有被勾选的元素）
+                        return !obj.isRed;
+                    })
+                    this.productList = arr;
                 }
-
+            },
+            computed:{
+                total(){
+                    let sum = 0;
+                    this.productList.forEach(function(obj,index){
+                        if(obj.isRed){
+                            sum += obj.price
+                        }
+                    })
+                    return sum;
+                }
             }
         });
 
