@@ -144,7 +144,18 @@
                         return obj;
                     });
                     this.productList = [...changeList];
-                    this.showList = [...changeList];
+
+                    
+                    let changeShowList = this.showList.map((obj)=>{
+                        console.log(obj); 
+                        if(obj.id == id){
+                            console.log(obj.isRed);
+                            obj.isRed = !obj.isRed;
+                            console.log(obj.isRed);
+                        }
+                        return obj;
+                    })
+                    this.showList = [...changeShowList];
                 },
                 delChecked(){
                     let arr = this.productList.filter(function(obj,index){
