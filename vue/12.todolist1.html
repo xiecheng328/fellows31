@@ -144,8 +144,9 @@
                         return obj;
                     });
                     this.productList = [...changeList];
-                    
+                    // bug  150  152  154   showList 有问题 可能是过滤导致的
                     let changeShowList = this.showList.map((obj)=>{
+
                         console.log(obj); 
                         if(obj.id == id){
                             console.log(obj.isRed);
