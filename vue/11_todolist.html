@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
     <style>
-        .red{
+        .red {
             background: red;
         }
     </style>
-    </head>
+</head>
 
 <body>
     <div id="app">
         <h1 class="text-center">todolist</h1>
         <form class="form-inline text-center">
             <div class="form-group">
-              <label for="exampleInputName2">Name</label>
-              <input type="text" class="form-control" v-model="proName" id="exampleInputName2" placeholder="请输入商品名">
+                <input type="text" class="form-control" placeholder="请输入过滤商品名">
+            </div>
+            <button type="submit" class="btn btn-default">过滤</button>
+        </form>
+
+        <form class="form-inline text-center">
+            <div class="form-group">
+                <label for="exampleInputName2">Name</label>
+                <input type="text" class="form-control" v-model="proName" id="exampleInputName2" placeholder="请输入商品名">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail2">price</label>
-              <input type="number" class="form-control"  v-model="proPrice" id="exampleInputEmail2" placeholder="请输入价格">
+                <label for="exampleInputEmail2">price</label>
+                <input type="number" class="form-control" v-model="proPrice" id="exampleInputEmail2" placeholder="请输入价格">
             </div>
             <button type="submit" class="btn btn-default" @click.prevent="add()">添加</button>
-          </form>
+        </form>
         <table class="table table-bordered text-center">
             <thead>
                 <td>选择</td>
@@ -38,14 +45,20 @@
                 <td>删除</td>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in productList" :key="index" @click="change(item)" :class="{red:item.isRed}">
-                    <td><input type="checkbox" v-model="item.isRed"></td>
+                <tr v-for="(item, index) in productList" :key="item" @click="change(item)" :class="{red:item.isRed}">
+                    <td>
+                        <input type="checkbox" v-model="item.isRed">
+                    </td>
                     <td>{{item.name}}</td>
                     <td>{{item.price}}</td>
-                    <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button></td>
+                    <td>
+                        <button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(index)"></button>
+                    </td>
                 </tr>
                 <tr>
-                    <td><button type="button" class="btn btn-danger btn-xs" @click="delChecked()">删除选中</button></td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-xs" @click="delChecked()">删除选中</button>
+                    </td>
                     <td colspan="3">总价是: {{total}} 元</td>
                 </tr>
             </tbody>
@@ -61,42 +74,40 @@
         let vm = new Vue({
             el: '#app',
             data: {
-                productList: [
-                    {
-                        name: '衣服',
-                        price: 123,
-                        isRed:false
-                    }, {
-                        name: '裤子',
-                        price: 234,
-                        isRed:false
-                    }, {
-                        name: '手机',
-                        price: 8888,
-                        isRed:false
-                    }, {
-                        name: '鞋',
-                        price: 777,
-                        isRed:false
-                    }
-                ],
-                proName:'',
-                proPrice:0
-            }
-            ,
+                productList: [{
+                    name: '衣服',
+                    price: 123,
+                    isRed: false
+                }, {
+                    name: '裤子',
+                    price: 234,
+                    isRed: false
+                }, {
+                    name: '手机',
+                    price: 8888,
+                    isRed: false
+                }, {
+                    name: '鞋',
+                    price: 777,
+                    isRed: false
+                }],
+                showList:[],
+                proName: '',
+                proPrice: 0
+            },
             methods: {
-                add(){
+                add() {
                     // 取到name  和 price添加到  productList数组中
                     this.productList.push({
-                        name:this.proName,
-                        price:this.proPrice,
-                        isRed:false
+                        name: this.proName,
+                        price: this.proPrice,
+                        isRed: false
                     })
                 },
-                change(item){
+                change(item) {
                     item.isRed = !item.isRed;
                 },
-                delChecked(){
+                delChecked() {
                     // 因为删除后 索引变化了  所以此方法不可以 
                     // this.productList.forEach((obj,index) => {
                     //     if(obj.isRed){
@@ -104,18 +115,21 @@
                     //         this.productList.splice(index,1);
                     //     }
                     // })
-                    let arr = this.productList.filter(function(obj,index){
+                    let arr = this.productList.filter(function (obj, index) {
                         // 过滤出所有isRed属性值为false 的元素 （没有被勾选的元素）
                         return !obj.isRed;
                     })
                     this.productList = arr;
+                },
+                del(index) {
+                    this.productList.splice(index, 1);
                 }
             },
-            computed:{
-                total(){
+            computed: {
+                total() {
                     let sum = 0;
-                    this.productList.forEach(function(obj,index){
-                        if(obj.isRed){
+                    this.productList.forEach(function (obj, index) {
+                        if (obj.isRed) {
                             sum += obj.price
                         }
                     })
@@ -123,7 +137,6 @@
                 }
             }
         });
-
     </script>
 
 </body>
