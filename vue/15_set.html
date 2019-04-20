@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+        </ul>
+        <button @click="fn"> click</button>
+
+    </div>
+
+    <script src="vue.js">
+    </script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4]
+            },
+            methods: {
+                fn(){
+                    // this.arr[1] = 6666;
+
+                    Vue.set(this.arr,1,666);
+                }
+            }
+        })
+
+        // es5 object.defineProperty()   vue8 以上
+
+        // es6 proxy()
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
