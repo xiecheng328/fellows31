@@ -133,29 +133,24 @@
 
                 },
                 change(id){
-                    console.log(111111);
                     // 只改变了 showList中传进来的item
                     // item.isRed = !item.isRed;
                     // 传进来的是 将要修改的obj的id   productList数组obj中id是id  元素的isRed = !isRed;
-                    let changeList = this.productList.map(function(obj,index){
-                        if(obj.id == id){
-                            obj.isRed = !obj.isRed;
-                        }
-                        return obj;
-                    });
-                    this.productList = [...changeList];
-                    // bug  150  152  154   showList 有问题 可能是过滤导致的
-                    let changeShowList = this.showList.map((obj)=>{
+                    // let changeList = this.productList.map(function(obj,index){
+                    //     if(obj.id == id){
+                    //         obj.isRed = !obj.isRed;
+                    //     }
+                    //     return obj;
+                    // });
+                    // this.productList = [...changeList];
+                    // this.showList =  [...changeList];
 
-                        console.log(obj); 
+                    this.showList.forEach(function(obj,index){
                         if(obj.id == id){
-                            console.log(obj.isRed);
                             obj.isRed = !obj.isRed;
-                            console.log(obj.isRed);
                         }
-                        return obj;
-                    })
-                    this.showList = [...changeShowList];
+                    });
+
                 },
                 delChecked(){
                     let arr = this.productList.filter(function(obj,index){
@@ -175,11 +170,14 @@
 
                 },
                 filProduct(){
+                    //从productList 中过滤出的商品  存在searchList中 obj(name = "衣服")
+                    // filter过滤出 新数组中存的对象  跟 原数组productList中存的对象  指向同一块堆内存
                     let searchList = this.productList.filter((obj,index)=>{
                         return obj.name.includes(this.searchName);
                     });
 
                     this.showList = [...searchList];
+                    
                     this.searchName = "";
                 }
             },
@@ -201,3 +199,17 @@
 </body>
 
 </html>
+
+
+
+<script>
+
+    var arr = [1,2,3,4];
+
+    arr.forEach(function(elem,index){
+        elem = elem +5;
+    })
+
+    console.log(elem);
+    
+</script>
