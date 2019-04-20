@@ -15,8 +15,8 @@
                 <p>solt下sdfghjk;l';'lkjhgfdhjkl;'lkjhgfxfghjk</p>
                 <span>1111111111111111</span>
             </div>
-            
         </demo>
+        <demo name="xixiixix" age="30"></demo>
         <!-- <demo name="hehehehhe" age="20">
             <h3>内容呵呵呵呵</h3>
         </demo>
@@ -37,13 +37,23 @@
     <script>
         let vm = new Vue({
             el:"#app",
+            data:{
+                msg:'haha'
+            },
             components:{
                 "demo":{
                     template:"#temp",
-                    props:["name","age"]
+                    props:["name","age"],
+                    data:function(){
+                        return {
+                            xx:'hehe'
+                        }
+                    }
                 }
             }
         })
+
+
 
 
         

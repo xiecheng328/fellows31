@@ -18,7 +18,7 @@
 
 <body>
     <div id="app">
-        <my-dialog title="登录">
+        <my-dialog title="登录" @close="fn">
             <h1>内容内容。。。。</h1>
         </my-dialog>
         <my-dialog title="注册">
@@ -38,7 +38,7 @@
         <div class="dialog">
             <div class="dialog-title">
                 <span>{{title}}</span>
-                <span>[X]</span>
+                <span @click="$emit('close',title)">[X]</span>
             </div>
             <div class="dialog-content">
                 <slot></slot>
@@ -46,11 +46,17 @@
         </div>
     </template>
     <script src="vue.js"></script>
+    <!-- 子组件向父组件传值 $emit(自定义事件,参数) -->
     <script>
         let vm = new Vue({
             el: "#app",
             data: {
 
+            },
+            methods: {
+                fn(msg){
+                    console.log(msg);
+                }
             },
             components: {
                 "my-dialog": {
