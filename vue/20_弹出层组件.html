@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dialog {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+            background: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-dialog title="登录">
+            <h1>内容内容。。。。</h1>
+        </my-dialog>
+        <my-dialog title="注册">
+            <div>
+                <div>
+                    <label>用户名：</label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <label>密码：</label>
+                    <input type="text" />
+                </div>
+            </div>
+        </my-dialog>
+    </div>
+    <template id="dial">
+        <div class="dialog">
+            <div class="dialog-title">
+                <span>{{title}}</span>
+                <span>[X]</span>
+            </div>
+            <div class="dialog-content">
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                "my-dialog": {
+                    template: "#dial",
+                    props: ["title"]
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
