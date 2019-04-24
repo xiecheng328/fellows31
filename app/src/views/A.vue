@@ -8,7 +8,7 @@
              <router-link to="/a/test2">test2</router-link>
         </div>
 
-
+        
         <router-view></router-view>
     </div>
 </template>
