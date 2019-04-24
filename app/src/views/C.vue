@@ -2,6 +2,10 @@
     <div>
         <h1>C页面</h1>
         {{$route.params.id}}
+
+        ----
+
+        {{$store.state.count}}
     </div>
 </template>
 
