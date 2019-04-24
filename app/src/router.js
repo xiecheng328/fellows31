@@ -21,11 +21,11 @@ export default new Router({
       component:A,
       children:[
         {
-          path:"/test1",
+          path:"/a/test1",
           component:Test1
         },
         {
-          path:"/test2",
+          path:"/a/test2",
           component:Test2
         }
       ]

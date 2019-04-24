@@ -2,10 +2,10 @@
     <div>
         <h1>A页面</h1>
         <div>
-             <router-link to="/test1">test1</router-link>
+             <router-link to="/a/test1">test1</router-link>
         </div>
          <div>
-             <router-link to="/test2">test2</router-link>
+             <router-link to="/a/test2">test2</router-link>
         </div>
 
 
