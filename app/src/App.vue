@@ -5,7 +5,6 @@
             <router-link to="/a">a页面</router-link>   
             <router-link to="/b">b页面</router-link>   
         </div>
-
         <router-view/>
         
     </div>
