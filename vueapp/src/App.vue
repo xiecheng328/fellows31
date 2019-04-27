@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <common-header></common-header>
-    内容
+    <div id="content">
+      <router-view></router-view>
+    </div>
     <common-footer></common-footer>
-
   </div>
 </template>
 
@@ -19,6 +20,8 @@
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style  scoped>
+#content{
+  margin:1rem 0;
+}
 </style>
