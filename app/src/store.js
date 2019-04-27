@@ -25,6 +25,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
+    // action中做异步操作 最终需要调用mutations中的方法修改状态
+    addAction({commit},num){
+      commit('add',num);
+    }
   }
 })

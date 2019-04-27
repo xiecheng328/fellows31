@@ -11,12 +11,13 @@
         <button @click="add(8)">+++</button>
         <!-- <button @click="$store.commit('reduce',2)">---</button> -->
         <button @click="reduce(2)">---</button>
+         <button @click="addAction(66)">异步</button>
     </div>
 </template>
 
 
 <script>
-    import {mapState,mapMutations,mapGetters} from 'vuex';
+    import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
     export default {
         data:function(){
             return {
@@ -39,7 +40,8 @@
             fn(num){
                 this.$store.commit('add',num);
             },
-            ...mapMutations(['add','reduce'])
+            ...mapMutations(['add','reduce']),
+            ...mapActions(['addAction'])
         }
     }
 </script>
