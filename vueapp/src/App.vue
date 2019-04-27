@@ -1,27 +1,58 @@
 <template>
   <div id="app">
-    <common-header></common-header>
+    <common-header :selectMenu="selectMenu"></common-header>
     <div id="content">
       <router-view></router-view>
     </div>
-    <common-footer></common-footer>
+    <common-footer :menu="menu" :selectMenu="selectMenu"></common-footer>
   </div>
 </template>
 
 <script>
-  import CommonHeader from '@/components/CommonHeader.vue';
-  import CommonFooter from '@/components/CommonFooter.vue';
+import CommonHeader from "@/components/CommonHeader.vue";
+import CommonFooter from "@/components/CommonFooter.vue";
 
-  export default {
-      components: {
-        CommonHeader,
-        CommonFooter
-      }
+export default {
+  data() {
+    return {
+      menu: [
+        {
+          name: "电影",
+          path: "/movie",
+          bg: "#f00"
+        },
+        {
+          name: "音乐",
+          path: "/music",
+          bg: "#00ffee"
+        },
+        {
+          name: "图书",
+          path: "/book",
+          bg: "#feef00"
+        },
+        {
+          name: "图片",
+          path: "/photo",
+          bg: "#fabbaa"
+        }
+      ],
+      selectMenu:{
+          name: "书籍",
+          path: "/photo",
+          bg: "#fabbaa"
+        }
+    };
+  },
+  components: {
+    CommonHeader,
+    CommonFooter
   }
+};
 </script>
 
 <style  scoped>
-#content{
-  margin:1rem 0;
+#content {
+  margin: 1rem 0;
 }
 </style>
