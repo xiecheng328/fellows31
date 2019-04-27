@@ -4,7 +4,7 @@
     <div id="content">
       <router-view></router-view>
     </div>
-    <common-footer :menu="menu" :selectMenu="selectMenu"></common-footer>
+    <common-footer :menu="menu" :selectMenu="selectMenu" @change="fn"></common-footer>
   </div>
 </template>
 
@@ -38,16 +38,30 @@ export default {
         }
       ],
       selectMenu:{
-          name: "书籍",
-          path: "/photo",
-          bg: "#fabbaa"
-        }
+          name: "电影",
+          path: "/movie",
+          bg: "#f00"
+        },
     };
   },
   components: {
     CommonHeader,
     CommonFooter
-  }
+  },
+  methods: {
+    fn(index){
+      // console.log(index);
+      this.selectMenu = this.menu[index];
+    }
+  },
+  created() {
+      // console.log(this.$route.path);
+      this.menu.forEach((obj,index)=>{
+          if(obj.path == this.$route.path){
+             this.selectMenu = obj;
+          }
+      })
+  },
 };
 </script>
 
