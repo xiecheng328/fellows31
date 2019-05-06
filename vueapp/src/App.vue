@@ -56,7 +56,7 @@ export default {
   },
   created() {
       // console.log(this.$route.path);
-      this.menu.forEach((obj,index)=>{
+      this.menu.forEach((obj)=>{
           if(obj.path == this.$route.path){
              this.selectMenu = obj;
           }

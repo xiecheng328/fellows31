@@ -37,5 +37,8 @@
     .footer-list a.router-link-active{
         color:#fff;
     }
+    .footer-list a:active{
+        background: none;
+    }
 
 </style>
