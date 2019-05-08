@@ -2,7 +2,7 @@
     <div class="movie-container">
         <ul>
             <li v-for="(obj,index) in movieList" :key="index" class="movie-list">
-                <img class="movie-img" src="xx.jpg"/>
+                <img class="movie-img" :src="obj.images.medium"/>
                 <div class="movie-text">
                     <h4>{{obj.title}}</h4>
                     <p>
@@ -13,7 +13,6 @@
                     <p>奇幻/</p>
                 </div>
             </li>
- 
         </ul>
     </div>
 </template>
