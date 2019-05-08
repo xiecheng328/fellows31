@@ -1,22 +1,22 @@
 <template>
     <div>
         音乐列表
-        <aplayer :music="{
-    title: 'secret base~君がくれたもの~',
-    artist: 'Silent Siren',
-    src: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.mp3',
-    pic: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.jpg'
-  }" :list="musicData"/>
+        <aplayer :music="music" :list="musicData" showlrc v-if="isShow"/>
     </div>
 </template>
-
 <script>
     import axios from 'axios'
     import Aplayer from 'vue-aplayer'
     export default {
         data(){
             return {
-                musicData:[]
+                musicData:[],
+                isShow:false
+            }
+        },
+        computed: {
+            music(){
+                return this.musicData[0];
             }
         },
        components: {
@@ -31,11 +31,11 @@
                        author:obj.author,
                        src:obj.src,
                        pic:obj.musicImgSrc,
-                       lrc:obj.lrc
+                       lrc:`http://localhost:8080/${obj.lrc}`
                    }
                    this.musicData.push(obj1);
                })
-
+               this.isShow = true;
             //    {
             //         "title": "我要你",
             //         "author": "老狼",
