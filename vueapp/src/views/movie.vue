@@ -30,7 +30,8 @@
             // 域名 协议  端口号 只要有一个不同即为跨域 安全限制 
 
     // https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10
-            axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10')
+            // axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10')
+            axios.get('/data/movie0.json')
             .then((result)=>{
                 this.movieList = result.data.subjects;
                 console.log(this.movieList);
