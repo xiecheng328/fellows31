@@ -1,7 +1,7 @@
 <template>
     <div class="movie-container">
         <ul>
-            <li v-for="(obj,index) in movieList" :key="index" class="movie-list">
+            <li v-for="(obj,index) in movieList" :key="index" class="movie-list" @click="goDetail(obj.id)">
                 <img class="movie-img" :src="obj.images.medium"/>
                 <div class="movie-text">
                     <h4>{{obj.title}}</h4>
@@ -54,13 +54,19 @@
                 this.isShow = true;
                 axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start='+this.movieList.length+'&count=10')
                 .then((result)=>{
+
                     this.isShow = false;
                     this.movieList = [...this.movieList,...result.data.subjects];
                     console.log(this.movieList.length ,result.data.subjects.total);
                     if(this.movieList.length == result.data.total){
                         this.isBottom = true;
                     }
+
+                    console.log();
                 })
+            },
+            goDetail(id){
+                this.$router.push('/moviedetail/'+id);
             }
         }
     }
