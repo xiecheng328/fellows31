@@ -7,6 +7,7 @@ import Music from '@/views/music.vue'
 import MusicList from '@/views/musicList.vue'
 import Book from '@/views/book.vue'
 import Photo from '@/views/photo.vue'
+import PhotoDetail from '@/views/photoDetail.vue'
 
 
 Vue.use(Router)
@@ -40,9 +41,12 @@ export default new Router({
       component:Photo
     },
     {
+      path:"/photoDetail/:index",
+      component:PhotoDetail
+    },
+    {
       path:'/',
       redirect: "/movie"
     }
-
   ]
 })
