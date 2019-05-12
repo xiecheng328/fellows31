@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var str = "zhaochucichuzuiduodezifu";
+    var o = {};
+    for (var i = 0, length = str.length; i < length; i++) {
+//        var char = str[i];
+        var char = str.charAt(i);
+        if (o[char]) {  //char就是对象o的一个属性，o[char]是属性值，o[char]控制出现的次数
+            o[char]++;  //次数加1
+        } else {
+            o[char] = 1;    //若第一次出现，次数记为1
+        }
+    }
+    console.log(o);   //输出的是完整的对象，记录着每一个字符及其出现的次数
+    </script>
+    
+</body>
+</html>
