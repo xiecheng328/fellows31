@@ -22,15 +22,17 @@
                 render(){
                     return (
                         <div>
-                            <h1>hello</h1>
-                            <p>呵呵</p>
+                            <h1>{this.props.name}</h1>
+                            <p>{this.props.content}</p>
+                            {this.props.children}
                         </div>
                     )
                 }
             }
-
             ReactDOM.render(
-                <Hello></Hello>,
+                <Hello name="haha" content="呵呵呵呵" >
+                    <h3>sdfghjkl;'</h3>
+                </Hello>,
                 document.getElementById('app')
             )
         </script>
