@@ -20,9 +20,10 @@
                 super(params);
                 this.clickHandle = this.clickHandle.bind(this);
             }
-            clickHandle(){
+            clickHandle(event){
                 console.log( this.refs.name.value);
                 console.log(this.xx.value);
+                console.log(event.target);
             }
             render(){
                 return (
