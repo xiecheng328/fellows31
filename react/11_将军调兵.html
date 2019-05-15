@@ -1,0 +1,80 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <div id="root">
+            
+        </div>
+        <script src="react.development.js"></script>
+        <script src="react-dom.development.js"></script>
+        <script src="browser.min.js"></script>
+        <script type="text/babel">
+
+            class Main extends React.Component{
+                constructor(params) {
+                    super(params);
+                    this.state = {
+                        total:150,
+                        numA:80,
+                        numB:70
+                    }
+                    this.change = this.change.bind(this);
+                }
+                change(num,name){  //20,A
+                    console.log(num,name);
+                    // console.log('num'+name)
+                    this.setState({
+                        total:this.state.total - num,
+                        ['num'+name]:this.state['num'+name] + parseInt(num)
+                    })
+                }
+                render(){
+                    return (
+                        <div>
+                            <h1>剩余士兵数量 {this.state.total}</h1>
+                            <Gen name="A" num={this.state.numA} change={this.change}></Gen>
+                            <Gen name="B" num={this.state.numB} change={this.change}></Gen>
+                        </div>
+                    )
+                }
+            }
+
+            class Gen extends React.Component{
+                constructor(params) {
+                    super(params);
+                    this.addSo = this.addSo.bind(this);
+                }
+                addSo(){
+                    // 调用父组件的change方法 
+                    this.props.change(this.myInput.value,this.props.name);
+                }
+                render(){
+                    return (
+                        <div>
+                            <p>{this.props.name}有士兵：{this.props.num}</p>
+                            <div>
+                                <input type="number" ref={input => this.myInput = input}/>
+                                <button onClick={this.addSo}>调兵</button>
+                            </div>
+                        </div>
+                    )
+                }
+            }
+
+            ReactDOM.render(
+                <Main></Main>,
+                document.getElementById('root')
+            )
+
+
+
+                
+        </script>
+
+    </body>
+
+</html>
