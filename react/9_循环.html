@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(params) {
+                super(params);
+                this.state = {
+                    arr:['a','b','c','d']
+                }
+            }
+            render(){
+                return (
+                    <ul>
+                        {
+                            this.state.arr.map((val,index)=>{
+                                return <li>{val}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+
+        }
+        
+
+        ReactDOM.render(
+            <Main></Main>
+            ,document.getElementById('app')
+        );
+        
+
+
+    </script>
+    
+</body>
+</html>
