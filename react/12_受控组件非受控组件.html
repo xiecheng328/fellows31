@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        
+        class MyComponent extends React.Component {
+            constructor(params) {
+                super(params);
+                this.show = this.show.bind(this);
+            }
+            show(){
+                alert("用户名是" +this.myInput.value);
+            }
+            render() {
+                return (
+                    <div>
+                        用户名：<input type="text" ref={input => this.myInput = input}/>
+                        密码：<input type="password"/>
+                        <button onClick={this.show}>click</button>
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(
+            <MyComponent></MyComponent>,
+            document.getElementById('root')
+        )
+        
+        
+
+
+    </script>
+
+    
+</body>
+</html>
