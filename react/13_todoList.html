@@ -10,6 +10,9 @@
         .red{
             background:red;
         }
+        .hide{
+            display: none;
+        }
     </style>
 </head>
 
@@ -29,23 +32,28 @@
                         {
                             name:'吃饭',
                             isActive:false,
-                            id:1
+                            id:1,
+                            isShow:true
                         },
                         {
                             name:'睡觉',
                             isActive:false,
-                            id:2
+                            id:2,
+                            isShow:true
                         },
                         {
                             name:'敲代码',
                             isActive:false,
-                            id:3
+                            id:3,
+                            isShow:true
                         }
 
                     ]
                 },
                 this.addHandle = this.addHandle.bind(this);
                 this.changeColorHandle = this.changeColorHandle.bind(this);
+                this.deleteHandle = this.deleteHandle.bind(this);
+                this.searchHandel = this.searchHandel.bind(this);
             }
             addHandle(value){
                 // console.log(value);
@@ -53,7 +61,8 @@
                 todos.push({
                     name:value,
                     isActive:false,
-                    id:(new Date()).getTime()
+                    id:(new Date()).getTime(),
+                    isShow:true
                 });
                 this.setState({
                     todos
@@ -69,13 +78,38 @@
 
                 console.log(this.state.todos);
             }
+            deleteHandle(index){
+                // 找到数组中 索引是index的元素 删除掉
+                let todos = [...this.state.todos];
+                todos.splice(index,1);
+                this.setState({
+                    todos
+                })
+            }
+            searchHandel(value){
+                // 从todos数组中 将name属性中包含value的 对象的isSHow属性 设置成true  不包含的设置成false
+                let todos = [...this.state.todos];
+                todos.forEach((obj,index)=>{
+                    // obj的name包含value
+                    if(obj.name.includes(value)){
+                        obj.isShow = true;
+                    }else{
+                        obj.isShow = false;
+                    }
+                })
+                this.setState({
+                    todos
+                });
+
+               
+            }
             render(){
                 return(
                     <div>
                         <h1>todoList</h1>
-                        <Search></Search>
+                        <Search searchHandel={this.searchHandel}></Search>
                         <Add addHandle={this.addHandle}></Add>
-                        <List changeColorHandle={this.changeColorHandle} todos={this.state.todos}></List>
+                        <List changeColorHandle={this.changeColorHandle} deleteHandle={this.deleteHandle} todos={this.state.todos}></List>
                     </div>
                 )
             }
@@ -85,11 +119,14 @@
                 super(props);
                 
             }
+
             render(){
                 return(
                     <div>
                         搜索：
-                        <input type="text"/>
+                        <input type="text" onChange={(e)=>{
+                            this.props.searchHandel(e.target.value);
+                        }}/>
                     </div>
                 )
             }
@@ -126,12 +163,17 @@
                     <ul>
                         {
                             this.props.todos.map((obj,index)=>{
+                                let class1 = obj.isActive?'red':'';
+                                let class2 = obj.isShow?'':'hide'
                                 return (
-                                    <li className={obj.isActive?'red':''} key={obj.id} onClick={()=>{
+                                    <li className={class1+" "+class2} key={obj.id} onClick={()=>{
                                         this.props.changeColorHandle(index);
                                     }}>
                                         {obj.name} 
-                                        <button>删除</button>
+                                        <button onClick={(e)=>{
+                                            this.props.deleteHandle(index);
+                                            e.stopPropagation();
+                                        }}>删除</button>
                                     </li>
                                 )
                             })
