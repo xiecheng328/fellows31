@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    todos:[
+                        {
+                            name:'吃饭',
+                            isActive:false,
+                            id:1
+                        },
+                        {
+                            name:'睡觉',
+                            isActive:false,
+                            id:2
+                        },
+                        {
+                            name:'敲代码',
+                            isActive:false,
+                            id:3
+                        }
+
+                    ]
+                },
+                this.addHandle = this.addHandle.bind(this);
+                this.changeColorHandle = this.changeColorHandle.bind(this);
+            }
+            addHandle(value){
+                // console.log(value);
+                let todos = [...this.state.todos];
+                todos.push({
+                    name:value,
+                    isActive:false,
+                    id:(new Date()).getTime()
+                });
+                this.setState({
+                    todos
+                })
+            }
+            changeColorHandle(index){
+                // 讲todos数组中索引是index的元素的isActive属性取反
+                let todos = [...this.state.todos];
+                todos[index].isActive = !todos[index].isActive ;
+                this.setState({
+                    todos
+                })
+
+                console.log(this.state.todos);
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>todoList</h1>
+                        <Search></Search>
+                        <Add addHandle={this.addHandle}></Add>
+                        <List changeColorHandle={this.changeColorHandle} todos={this.state.todos}></List>
+                    </div>
+                )
+            }
+        }
+        class Search extends React.Component{
+            constructor(props) {
+                super(props);
+                
+            }
+            render(){
+                return(
+                    <div>
+                        搜索：
+                        <input type="text"/>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            constructor(props) {
+                super(props);
+                this.add = this.add.bind(this);
+            }
+            add(){
+                // 取到input中的value  
+                
+
+                // 传给main父组件  =>调用父组件中传过来的方法
+                this.props.addHandle(this.myInput.value);
+
+            }
+            render(){
+                return(
+                    <div>
+                        添加：
+                        <input type="text" ref={input=>this.myInput = input}/>
+                        <button onClick={this.add}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class List extends React.Component{
+            constructor(props) {
+                super(props);
+            }
+            render(){
+                return(
+                    <ul>
+                        {
+                            this.props.todos.map((obj,index)=>{
+                                return (
+                                    <li className={obj.isActive?'red':''} key={obj.id} onClick={()=>{
+                                        this.props.changeColorHandle(index);
+                                    }}>
+                                        {obj.name} 
+                                        <button>删除</button>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+
+
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+        )
+        
+
+
+
+        
+        
+    </script>
+
+</body>
+
+</html>

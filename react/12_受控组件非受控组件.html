@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .aa{
+            background: red;
+        }
+    
+    </style>
 </head>
 <body>
     <div id="root">
@@ -18,30 +24,39 @@
             constructor(params) {
                 super(params);
                 this.show = this.show.bind(this);
+                this.change = this.change.bind(this);
+                this.state = {
+                    pwd:'请输入密码'
+                }
             }
             show(){
-                alert("用户名是" +this.myInput.value);
+                alert("用户名是" +this.myInput.value +"密码是："+this.state.pwd);
+            }
+            change(event){
+                this.setState({
+                    pwd:event.target.value
+                })
             }
             render() {
+                let style = {
+                    color:'#f00',
+                    background:'#00f'
+                }
                 return (
                     <div>
-                        用户名：<input type="text" ref={input => this.myInput = input}/>
-                        密码：<input type="password"/>
+                        用户名：<input className="aa" type="text" ref={input => this.myInput = input}/>
+                        密码：<input style={style} type="password" onChange={this.change}/>
                         <button onClick={this.show}>click</button>
                     </div>
                 )
             }
         }
 
-
         ReactDOM.render(
             <MyComponent></MyComponent>,
             document.getElementById('root')
         )
         
-        
-
-
     </script>
 
     
