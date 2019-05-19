@@ -1,7 +1,9 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
+let initialState = {
+    num:0
+}
+let store = createStore(()=>{
 
-const initialState = 0
-const store = createStore(()=>{
+},initialState);
 
-},initialState)
 export default store;
