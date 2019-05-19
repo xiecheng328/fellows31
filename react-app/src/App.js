@@ -3,13 +3,18 @@ import {
   BrowserRouter as Router,
   Link,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom'
 import A from './components/A'
 import B from './components/B'
 import C from './components/C'
 import Home from './components/Home'
 import Children from './components/Children';
+
+let Jump = (props) =>{
+  return <Link to={props.to}>{props.children}</Link>
+}
 function App() {
   return (
     <div className="App">
@@ -25,6 +30,8 @@ function App() {
             ----
             <Link to="/d">D页面</Link>
             <Link to="/children">children</Link>
+            <Link to="/e">重定向</Link>
+
             {/* <Route exact path="/" component={Home}></Route>
             <Route path="/a" component={A}></Route>
             <Route path="/b" component={B}></Route> */}
@@ -49,10 +56,8 @@ function App() {
                  console.log(str)
                  return <Children str={str}></Children>
               }}></Route>
-
-
-
-
+              <Route path="/e" render={()=><Redirect to="/"></Redirect>}></Route>
+              <Jump to="/xxx">xxx</Jump>
         </Router>
     </div>
   );
