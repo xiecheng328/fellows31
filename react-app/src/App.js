@@ -24,13 +24,15 @@ function App() {
     <div className="App">
         <div>HAHA</div>
         <Router>
-            <NavLink to="/">首页面</NavLink>
+            <NavLink exact activeClassName="selected" to="/">首页面</NavLink>
             ----
-            <NavLink to="/a/5">A页面</NavLink>
+            <NavLink to="/a/5" activeClassName="selected" >A页面</NavLink>
             ----
-            <NavLink to="/b">B页面</NavLink>
+            <NavLink activeStyle={{color:'green'}} to="/b">B页面</NavLink>
             ----
-            <NavLink to="/c/666">C页面</NavLink>
+            <NavLink to="/c/666" isActive={()=>{
+              return true;
+            }}>C页面</NavLink>
             ----
             <NavLink to="/d">D页面</NavLink>
             <NavLink to="/children">children</NavLink>

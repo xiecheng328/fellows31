@@ -17,7 +17,6 @@ export default class Home extends Component {
             }
           }>跳转到到B页面</button>
 
-          <Prompt when={this.state.flag} message="确认离开吗？"></Prompt>
       </div>
     )
   }
