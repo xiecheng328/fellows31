@@ -11,6 +11,7 @@ import B from './components/B'
 import C from './components/C'
 import Home from './components/Home'
 import Children from './components/Children';
+import F from './components/F';
 
 let Jump = (props) =>{
   return <Link to={props.to}>{props.children}</Link>
@@ -58,6 +59,8 @@ function App() {
               }}></Route>
               <Route path="/e" render={()=><Redirect to="/"></Redirect>}></Route>
               <Jump to="/xxx">xxx</Jump>
+              <hr></hr>
+              <F></F>
         </Router>
     </div>
   );
