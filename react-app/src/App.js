@@ -4,7 +4,9 @@ import {
   Link,
   Route,
   Switch,
-  Redirect
+  Redirect,
+  Prompt,
+  NavLink
 } from 'react-router-dom'
 import A from './components/A'
 import B from './components/B'
@@ -12,6 +14,7 @@ import C from './components/C'
 import Home from './components/Home'
 import Children from './components/Children';
 import F from './components/F';
+import './App.css'
 
 let Jump = (props) =>{
   return <Link to={props.to}>{props.children}</Link>
@@ -21,17 +24,17 @@ function App() {
     <div className="App">
         <div>HAHA</div>
         <Router>
-            <Link to="/">首页面</Link>
+            <NavLink to="/">首页面</NavLink>
             ----
-            <Link to="/a/5">A页面</Link>
+            <NavLink to="/a/5">A页面</NavLink>
             ----
-            <Link to="/b">B页面</Link>
+            <NavLink to="/b">B页面</NavLink>
             ----
-            <Link to="/c/666">C页面</Link>
+            <NavLink to="/c/666">C页面</NavLink>
             ----
-            <Link to="/d">D页面</Link>
-            <Link to="/children">children</Link>
-            <Link to="/e">重定向</Link>
+            <NavLink to="/d">D页面</NavLink>
+            <NavLink to="/children">children</NavLink>
+            <NavLink to="/e">重定向</NavLink>
 
             {/* <Route exact path="/" component={Home}></Route>
             <Route path="/a" component={A}></Route>
