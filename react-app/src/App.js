@@ -17,18 +17,20 @@ import F from './components/F';
 import './App.css'
 import store from './store';
 import {add,reduce} from './action'
+import { connect } from 'react-redux';
+
 
 let Jump = (props) =>{
   return <Link to={props.to}>{props.children}</Link>
 }
-function App() {
+function App(props) {
   return (
     <div className="App">
-        <div>HAHA</div>
+        <div>{props.num}</div>
         <button onClick={()=>{
             console.log('我要修改num值');
             // 通过store.dispatch触发action修改num 
-            store.dispatch(add());
+            store.dispatch(add(2));
 
         }}>add</button>
         <button onClick={()=>{
@@ -86,5 +88,10 @@ function App() {
     </div>
   );
 }
+let mapStateToProps = (state) =>{
+  return {
+      num:state.num
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);

@@ -4,7 +4,7 @@ let num = (state=0,action) =>{
     console.log(state,action)
     switch (action.type) {
         case 'ADD':
-            return state+1;
+            return state+action.payload;
         case 'REDUCE':
             return state-1;
         default:

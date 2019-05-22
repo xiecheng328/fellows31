@@ -1,7 +1,8 @@
-export let add = () =>{
+export let add = (count) =>{
     console.log('触发了Add action')
     return {
-        type:'ADD'
+        type:'ADD',
+        payload:count
     }
 }
 export let reduce = () =>{
