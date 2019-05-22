@@ -16,7 +16,7 @@ import Children from './components/Children';
 import F from './components/F';
 import './App.css'
 import store from './store';
-import add from './action'
+import {add,reduce} from './action'
 
 let Jump = (props) =>{
   return <Link to={props.to}>{props.children}</Link>
@@ -29,6 +29,12 @@ function App() {
             console.log('我要修改num值');
             // 通过store.dispatch触发action修改num 
             store.dispatch(add());
+
+        }}>add</button>
+        <button onClick={()=>{
+            console.log('我要修改num值');
+            // 通过store.dispatch触发action修改num 
+            store.dispatch(reduce());
 
         }}>add</button>
 
