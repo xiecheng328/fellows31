@@ -15,6 +15,8 @@ import Home from './components/Home'
 import Children from './components/Children';
 import F from './components/F';
 import './App.css'
+import store from './store';
+import add from './action'
 
 let Jump = (props) =>{
   return <Link to={props.to}>{props.children}</Link>
@@ -23,6 +25,14 @@ function App() {
   return (
     <div className="App">
         <div>HAHA</div>
+        <button onClick={()=>{
+            console.log('我要修改num值');
+            // 通过store.dispatch触发action修改num 
+            store.dispatch(add());
+
+        }}>add</button>
+
+        <hr></hr>
         <Router>
             <NavLink exact activeClassName="selected" to="/">首页面</NavLink>
             ----
