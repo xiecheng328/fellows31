@@ -3,27 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 // import Button from 'antd/lib/button';
 import { 
-  Button ,
-  Icon,
-  Menu,
   Row,
   Col
 } from 'antd';
-const { SubMenu } = Menu;
+import NavLeft from './component/NavLeft'
+
 function App() {
   return (
     <div className="App">
         <Row>
           <Col span={4}  >
-            <div>
-                
-            </div>
-            <Menu theme="dark" mode="inline">
-              <Menu.Item><Icon type="bank"></Icon>菜单项</Menu.Item>
-              <SubMenu title="子菜单">
-                <Menu.Item>子菜单项</Menu.Item>
-              </SubMenu>
-            </Menu>
+              <NavLeft></NavLeft>
           </Col>
           <Col span={20}  >right</Col>
         </Row>
