@@ -5,19 +5,26 @@ const {SubMenu} = Menu;
 
 export default class NavLeft extends Component {
     createMenu = (menuList) => {
-        let list = menuList.map((elem)=>{
-            return (
-                <Menu.Item>
-                    <Icon type={elem.icon}></Icon>
+        return  menuList.map((elem)=>{
+            if(elem.children){
+                return (
+                    <SubMenu title={elem.title} key={elem.path}>
+                        {/* 递归调用  循环生成子菜单  */}
+                        {this.createMenu(elem.children)}
+                    </SubMenu>
+                )
+            }
+            return (<Menu.Item key={elem.path}><Icon type={elem.icon}></Icon>
                     {elem.title}
-                </Menu.Item>)
-        })
-        this.setState({
-            list
+                    </Menu.Item>);
         })
     }
     componentWillMount = () => {
-      this.createMenu(menuList);
+        // 取到map循环出来的数组
+        let list = this.createMenu(menuList);
+        this.setState({
+            list
+        });
     }
     
     render() {
