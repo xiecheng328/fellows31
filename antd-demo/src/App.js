@@ -12,10 +12,13 @@ function App() {
   return (
     <div className="App">
         <Row>
-          <Col span={4}  >
+          <Col span={4} className="navleft" >
               <NavLeft></NavLeft>
           </Col>
-          <Col span={20}  >right</Col>
+          <Col span={20}  >
+              
+
+          </Col>
         </Row>
     </div>
   );

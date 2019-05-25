@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Menu ,Icon} from 'antd';
 import menuList from './../../config/menuconfig'
+import './index.css';
+
 const {SubMenu} = Menu;
 
 export default class NavLeft extends Component {
@@ -8,12 +10,14 @@ export default class NavLeft extends Component {
         return menuList.map((elem)=>{
             if(elem.children){
                 return (
-                    <SubMenu title={<span><Icon type={elem.icon}></Icon>{elem.title}</span>}>
+                    <SubMenu key={elem.path} title={<span><Icon type={elem.icon}></Icon>{elem.title}</span>}>
                         {this.creteMenu(elem.children)}
                     </SubMenu>
                 )
             }
-            return (<Menu.Item><Icon type={elem.icon}></Icon>{elem.title}</Menu.Item>)
+            return (<Menu.Item key={elem.path}>
+                {elem.icon?<Icon type={elem.icon}></Icon>:null}
+                {elem.title}</Menu.Item>)
         })
     }
     componentWillMount(){
@@ -25,7 +29,10 @@ export default class NavLeft extends Component {
     render() {
         return (
         <div>
-            <Menu theme="dark" mode="inline">
+            <div className="logobox">
+                <img src="/imgs/logo.png"/>
+            </div>
+            <Menu theme="dark" mode="inline" defaultOpenKeys={['/admin/student']}>
                 {this.state.list}
                 {/* <Menu.Item>菜单项</Menu.Item>
                 <Menu.Item>菜单项</Menu.Item>

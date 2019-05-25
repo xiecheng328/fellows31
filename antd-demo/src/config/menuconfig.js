@@ -28,21 +28,21 @@ const menuList = [
             }
         ]
     },
-    // {
-    //     title:"教师管理",
-    //     path:'/admin/teacher',
-    //     icon:'appstore',
-    //     children:[
-    //         {
-    //             title:"教师列表",
-    //             path:'/admin/teacher/list'
-    //         },
-    //         {
-    //             title:"教师成绩",
-    //             path:'/admin/teacher/list2'
-    //         }
-    //     ]
-    // }
+    {
+        title:"教师管理",
+        path:'/admin/teacher',
+        icon:'appstore',
+        children:[
+            {
+                title:"教师列表",
+                path:'/admin/teacher/list'
+            },
+            {
+                title:"教师成绩",
+                path:'/admin/teacher/list2'
+            }
+        ]
+    }
 ]
 
 export default menuList;
