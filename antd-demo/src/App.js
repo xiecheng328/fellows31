@@ -7,15 +7,22 @@ import {
   Col
 } from 'antd';
 import NavLeft from './component/NavLeft'
+import CHeader from './component/CHeader';
+import CFooter from './component/CFooter';
+import Home from './page/Home/index';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
         <Row>
-          <Col span={4}  >
+          <Col span={4} className="navleft" >
               <NavLeft></NavLeft>
           </Col>
-          <Col span={20}  >right</Col>
+          <Col span={20}  >
+              <CHeader></CHeader>
+              {props.children}
+              <CFooter/>
+          </Col>
         </Row>
     </div>
   );
