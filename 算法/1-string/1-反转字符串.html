@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "Let's take LeetCode contest";
+    function reverseWords(s){
+
+//        let arr = s.split(" ");//[let's,take,leetcode]
+//        let res = arr.map((item)=>{
+//            //[l,e,t,',s]  s'tel
+//            return item.split("").reverse().join("");
+//        });
+//
+//        return res.join(" ");
+
+
+//        return s.split(" ").map((item)=>{
+//            return item.split("").reverse().join("");
+//        }).join(" ");
+
+//        return s.split(" ").map((item)=>{
+//            return item.split("").reverse().join("");
+//        }).join(" ");
+
+        return s.match(/[\w']+/g).map((item)=>{
+            return item.split("").reverse().join("");
+        }).join(" ");
+
+    }
+    console.log(reverseWords(str));
+</script>
+</body>
+</html>
