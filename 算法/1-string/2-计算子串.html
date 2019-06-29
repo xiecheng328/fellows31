@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let str = "10101";
+     //找符合条件的字符串
+    function fn(str){
+        let i = str.match(/^(0+|1+)/g)[0];
+        let j = (i[0]^1).toString().repeat(i.length); //11
+        let reg = new RegExp(`^(${i}${j})`); //^0011
+        if(reg.test(str)){
+           return RegExp.$1;
+        }else{
+           return "";
+        }
+    }
+    function countBinarySubstrings(s){
+        let res = [];
+        for(let i=0;i<s.length-1;i++){
+            let r = fn(s.slice(i));
+            if(r){
+                res.push(r);
+            }
+        }
+        return res.length;
+    }
+    console.log(countBinarySubstrings(str));
+    
+</script>
+</body>
+</html>
