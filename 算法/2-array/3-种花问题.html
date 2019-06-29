@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,0,0,0,1];
+    function canPlaceFlowers(a,n){
+        let max = 0;
+        let flag = false;
+        for(let i=0;i<a.length-1;i++){
+            if(i===0 && a[i]===0 && a[i+1]===0){
+                max++;
+                i++;
+            }else if(a[i]===0 && a[i-1]===0 && a[i+1]===0){
+                max++;
+                i++;
+                if(i===a.length-1){
+                    flag = true;
+                }
+            }
+        }
+        if(!flag && a[a.length-1]===0 && a[a.length-2]===0){
+            max++;
+        }
+//        if(a[a.length-1]===0 && a[a.length-2]===0){
+//            max++;
+//        }
+        return max >= n;
+    }
+    console.log(canPlaceFlowers(arr,2));
+</script>
+</body>
+</html>
