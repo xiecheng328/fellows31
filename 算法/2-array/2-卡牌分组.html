@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    [1,1,1,1,2,2,3,3]
+//
+//   12,8,2
+//
+//    4 2
+
+    // a,b
+
+//    a = c * b + d;
+//        d==0; b
+//        d>0; b = e * d + f;
+//                f==0;a = (c*e+1)*d
+//                f>0
+    let input = [1,1,2,2,3,3,4,4];
+    //求最大公约数
+    function fn(a,b){
+        if(b==0){
+            return a;
+        }else{
+            return fn(b,a % b);
+        }
+    }
+    function hasGroupsSizeX(arr){
+        var str = arr.sort((a,b)=>a-b).join("");
+        //"11223344"
+        var a = str.match(/(\d)\1+|\d/g);
+        while(a.length > 1){
+            //"11"
+            let i = a.shift().length;
+            //"22"
+            let j = a.shift().length;
+            let k = fn(i,j);
+//            [00,44]
+            a.unshift("0".repeat(k));//00
+        }
+        return a[0].length>1?true:false;
+    }
+    console.log(hasGroupsSizeX(input));
+
+
+
+</script>
+</body>
+</html>
