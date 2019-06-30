@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    ["",2,3]
+//    push()  shift();
+////队首    0
+//            0
+//        [6, 2, 3,4,5]
+    class MyCircularQueue{
+        constructor(k){
+            this.list = new Array(k);
+            this.front = 0;//队首指针
+            this.rear = 0;//队尾指针
+            this.max = k;//3
+        }
+        Front(){
+            if(this.isEmpty()){
+                return -1;
+            }else{
+
+                return this.list[this.front];
+            }
+        }
+        Rear(){
+            if(this.isEmpty()){
+                return -1;
+            }else{
+                let r = this.rear - 1;
+                return r < 0?this.list[this.max -1]:this.list[r];
+            }
+        }
+        isEmpty(){
+            return this.front === this.rear && !this.list[this.front];
+        }
+        isFull(){
+            return this.front === this.rear && !!this.list[this.front];
+        }
+        enQueue(value){
+           if(this.isFull()){
+               return false;
+           }else{
+               this.list[this.rear] = value;
+               this.rear = (this.rear+1) % this.max;
+               return true;
+           }
+        }
+        deQueue(){
+            if(this.isEmpty()){
+                return false;
+            }else{
+                this.list[this.front] = null;
+                this.front = (this.front+1) % this.max;
+                return true;
+            }
+        }
+    }
+
+    let circularQueue = new MyCircularQueue(3); // 设置长度为 3
+
+    console.log(circularQueue.enQueue(1));  // 返回 true
+    console.log(circularQueue.enQueue(2));  // 返回 true
+    console.log(circularQueue.enQueue(3));  // 返回 true
+    console.log(circularQueue.enQueue(4));  // 返回 false，队列已满
+    console.log(circularQueue.Rear());  // 返回 3
+    console.log(circularQueue.isFull());  // 返回 true
+    console.log(circularQueue.deQueue());  // 返回 true
+    console.log(circularQueue.enQueue(4));  // 返回 true
+    console.log(circularQueue.Rear());  // 返回 4
+
+</script>
+</body>
+</html>
