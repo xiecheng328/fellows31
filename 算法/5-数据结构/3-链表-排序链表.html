@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// ox12    node{val:xxx,next:ox15}
+// ox15    node{val:yyy,next:ox20}
+// ox20    node{val:yyy,next:ox20}
+    class Node{
+        constructor(val){
+            this.val = val;
+            this.next = undefined;
+        }
+    }
+
+    class NodeList{
+        constructor(arr){
+            this.head = new Node(arr[0]);
+            let temp = this.head;
+            for(var i=1;i<arr.length;i++){
+                temp.next = new Node(arr[i]);
+                temp = temp.next;
+            }
+            return this.head;
+        }
+    }
+    //换两个位置的值
+    let swap = (p,q)=>{
+        [p.val,q.val] = [q.val,p.val];
+    }
+
+    //找到基准值
+    let pos = (begin,end)=>{
+        let val = begin.val;//4
+        let p = begin;
+        let q = begin.next;
+        while (q!=end){
+            if(q.val < val){
+                swap(p.next,q);
+                p = p.next;
+            }
+            q = q.next;
+        }
+        swap(p,begin);
+        return p;
+    }
+
+    let sort = (begin,end)=>{
+        if(begin != end){
+            let obj = pos(begin,end);//找到的基准值
+            sort(begin,obj);//
+            sort(obj.next,end);
+        }
+    }
+
+
+    let nl = new NodeList([5,3,2,4,6,1]);
+    sort(nl);
+    while(nl){
+        console.log(nl.val);
+        nl = nl.next;
+    }
+//
+//         p
+//             q
+//         4,2,3,5,6,8
+//
+//        q和p的下一个换，p下移，q下移
+
+
+
+
+
+</script>
+</body>
+</html>
