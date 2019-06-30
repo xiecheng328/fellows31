@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function maximumGap(arr){
+        //第一种
+//        if(arr.length <2){
+//            return 0;
+//        }
+//        arr.sort((a,b)=>a-b);
+//        let max = 0;//最大差
+//        for(let i=0;i<arr.length-1;i++){
+//            if(arr[i+1] - arr[i] > max){
+//                max = arr[i+1] - arr[i];
+//            }
+//        }
+//        return max;
+        //第二种
+        let max =0;
+        if(arr.length <2){
+            return 0;
+        }
+        for(let i=arr.length-1;i>=0;i--){
+           for(let j=0;j<=i;j++){
+               if(arr[j] > arr[j+1]){
+                   [arr[j],arr[j+1]] = [arr[j+1],arr[j]];
+               }
+           }
+           if(i < arr.length-1){
+               if(arr[i+1] - arr[i] > max){
+                    max = arr[i+1] - arr[i];
+               }
+           }
+        }
+        return max;
+    }
+    console.log(maximumGap([3,6,9,1]));
+</script>
+</body>
+</html>
