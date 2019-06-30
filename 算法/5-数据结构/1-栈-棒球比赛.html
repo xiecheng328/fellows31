@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 栈   先入后出 后入先出
+    // 数组模拟栈   push() pop()
+    var calPoints = function(ops) {
+        let res = [];
+        let pre1;
+        let pre2;
+        ops.forEach(item=>{
+            switch (item) {
+                case "D":
+                    if(res.length>0){
+                        let pre1 =res.pop();
+                        res.push(pre1,pre1 * 2);
+                    }
+                    break;
+                case "C":
+                    if(res.length>0){
+                        res.pop();
+                    }
+                    break;
+                case "+":
+                    if(res.length>1){
+                        pre1 =res.pop();//20
+                        pre2 =res.pop();//10
+                        res.push(pre2,pre1,pre1+pre2);
+                    }
+                    break;
+                default:
+                    res.push(item*1);
+                    break;
+            }
+        });
+
+        return res.reduce((total,num)=>total+num);
+
+    };
+    console.log(calPoints(["5","-2","4","C","D","9","+","+"]));
+
+
+</script>
+</body>
+</html>
