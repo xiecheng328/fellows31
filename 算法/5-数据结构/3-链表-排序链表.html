@@ -57,13 +57,30 @@
         }
     }
 
+    let isCircle = (head)=>{
+        let slow = head;
+        let fast = head.next;
+        while(1){
+            if(!fast || !fast.next){
+                return false;
+            }else if(fast === slow || fast.next === slow){
+                return true;
+            }else{
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+        }
+    }
+
 
     let nl = new NodeList([5,3,2,4,6,1]);
-    sort(nl);
-    while(nl){
-        console.log(nl.val);
-        nl = nl.next;
-    }
+    nl.next.next.next.next.next.next = nl.next.next;
+//    sort(nl);
+//    while(nl){
+//        console.log(nl.val);
+//        nl = nl.next;
+//    }
+    console.log(isCircle(nl));
 //
 //         p
 //             q

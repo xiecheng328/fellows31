@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Node{
+        constructor(val){
+            this.key = val;
+            this.left = undefined;
+            this.right = undefined;
+        }
+    }
+
+    class BirTree{
+        constructor(arr){
+            this.root = undefined;
+            arr.forEach((item)=>{
+                this.insert(item);
+            })
+        }
+        insert(key){
+            if(!this.root){
+                this.root = new Node(key);
+            }else{
+                this.insertNode(this.root,key);
+            }
+        }
+        insertNode(node,key){
+            if(node.key < key){
+                if(!node.right){
+                    node.right = new Node(key);
+                }else{
+                    this.insertNode(node.right,key);
+                }
+            }else{
+                if(!node.left){
+                    node.left = new Node(key);
+                }else{
+                    this.insertNode(node.left,key);
+                }
+            }
+        }
+    }
+
+    let bt = new BirTree([6,3,5,4,8,7]);
+
+
+</script>
+</body>
+</html>
