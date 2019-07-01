@@ -43,10 +43,68 @@
                 }
             }
         }
+
+        //最小值
+        min(){
+            function fn(node) {
+                while (node.left){
+                    node = node.left;
+                }
+                return node.key;
+            }
+            return fn(this.root);
+        }
+        //前序遍历  中序遍历  后序遍历
+        middle(){
+            //
+            function fn(node){
+                if(node.left){
+                    fn(node.left);//输出left
+                }
+                console.log(node.key);
+                if(node.right){
+                    fn(node.right);//输出right
+                }
+            }
+            fn(this.root);
+        }
+        //前序遍历  中序遍历  后序遍历
+        front(){
+            //
+            function fn(node){
+                console.log(node.key);
+                if(node.left){
+                    fn(node.left);//输出left
+                }
+                if(node.right){
+                    fn(node.right);//输出right
+                }
+            }
+            fn(this.root);
+        }
+        rear(){
+            //
+            function fn(node){
+                if(node.left){
+                    fn(node.left);//输出left
+                }
+                if(node.right){
+                    fn(node.right);//输出right
+                }
+                console.log(node.key);
+            }
+            fn(this.root);
+        }
+
     }
 
     let bt = new BirTree([6,3,5,4,8,7]);
-
+    console.log(bt.min());
+    bt.middle();
+    console.log("---------");
+    bt.front();
+    console.log("---------");
+    bt.rear();
 
 </script>
 </body>
