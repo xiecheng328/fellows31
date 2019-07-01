@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function maxProfit(arr){
+        let count = 0;//总利润
+        //表示买入的时机
+        for(let i=0;i<arr.length;i++){
+            for(let j=i;j<arr.length-1;j++){
+                if(arr[j+1]>arr[j]){
+                    count += arr[j+1] - arr[j];
+                }else{
+                    break;
+                }
+                //                    count += arr[j] - arr[i];
+                i = j;
+            }
+        }
+        return count;
+    }
+
+    console.log(maxProfit([1,2,3,4,5,3,6]));
+
+</script>
+</body>
+</html>
