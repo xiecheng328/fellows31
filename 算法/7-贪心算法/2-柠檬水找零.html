@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var lemonadeChange = function(bills) {
+        let box = [];//零钱库
+        while (bills.length > 0){
+            let money = bills.shift();
+            if(money === 5){
+                box.push(money);
+            }else{
+                let zl = money - 5;//需要找零多少
+                box.sort((a,b)=>b-a);
+                for(let i=0;i<box.length;i++){
+                    if(zl >= box[i]){
+                        zl -= box[i];
+                        box.splice(i,1);//把找到的零钱删除
+                        i--;
+                        if(zl === 0){
+                           box.push(money);
+                           break;
+                        }
+                    }
+                }
+                if(zl !== 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+    console.log(lemonadeChange([5,5,10,10,20]));
+</script>
+</body>
+</html>
