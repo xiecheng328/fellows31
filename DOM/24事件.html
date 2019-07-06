@@ -23,7 +23,7 @@
         事件  事件源  事件处理函数
         事件冒泡 点击子元素会触发父元素的点击事件（父子关系）
      -->
-     <div id="div1">
+     <div id="div1" >
          div1
          <div id="div2">div2</div>
      </div>
@@ -38,6 +38,7 @@
             console.log(e.target||e.srcElement ); //div2 事件源
             // e.srcElement
         }
+        
         var oA = document.getElementById('link');
         oA.onclick = function(e){
             e = e || window.event

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 类  具有相同属性和方法的对象的集合 -->
+
+    <script>
+        // 首先要在Person的构造函数里定义属性，在Person的原型里定义方法：
+        function Person(name){
+            this.name = name;
+        }
+        Person.prototype.say = function(){
+            console.log(this.name +"hahaha");
+        }
+
+        var p1 = new Person('zs');
+        var p2 = new Person('lisi');
+
+        // 然后在Coder的构造函数中使用Person.call(this)来继承Person中的属性：
+
+        function Coder(name){
+            Person.call(this,name);
+        }
+        // 再用Coder.prototype等于Person的一个实例对象来继承Person中的方法
+        Coder.prototype = new Person();
+        Coder.prototype.constructor = Coder; //缺点就是这个构造函数有问题，需要指回去 
+
+        var c1 = new Coder('jack');
+
+        
+
+    </script>
+    
+
+    
+</body>
+</html>

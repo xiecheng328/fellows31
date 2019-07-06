@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        函数  window 
+
+        定时器  window
+
+        事件  当前对象的引用
+
+        对象中   指向当前对象 
+
+        类中   实例化对象
+
+
+        es5 this指向调用时的this
+        es6 箭头函数中this 声明时的this
+
+
+        call()
+        apply()
+        bind()
+     -->
+
+    <script>
+        function a(name,age){
+            console.log(this);
+        }
+        var obj = {
+            name:'zs'
+        }
+        a.call(obj,'xx',10);
+        a.apply(obj,['xx',10]);
+        a.bind(obj,'xx',10)();
+
+        
+
+
+        
+
+    </script>
+
+
+
+    
+</body>
+</html>

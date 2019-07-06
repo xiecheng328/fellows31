@@ -42,14 +42,15 @@
         //     oUl.appendChild(oLi);
         // }
 
-        /* 事件委托 事件绑定到已经存在的父元素身上，
+        /* 事件委托 
+        事件绑定到已经存在的父元素身上，
         点击子元素的时候事件冒泡  会触发父元素的点击事件
         通过事件源e.target 判断点击的是否是Li 
 
         解决后生成元素的事件绑定问题 
         只绑一个事件
+        
         */
-
         oUl.onclick = function(e){
             e = e || window.event;
             var target = e.target || e.srcElement;
