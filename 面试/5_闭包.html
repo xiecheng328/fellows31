@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 闭包是指外部函数里声明内部函数，内部函数引用外部函数里的局部变量，
+        这样当外部函数调用完毕以后，局部变量不被释放，可以一直使用。
+        
+        好处： 希望一个变量长期驻扎在内存中      
+              代码模块化  避免全局污染   
+
+        用法 .循环中找到对应元素的索引 不需要加索引了 
+
+        缺点 内存泄露 
+    -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+
+    <script>
+        // function a(){
+        //     var x = 10;
+        //     return function(){
+        //         x++;
+        //         console.log(x);
+        //     }
+        // }
+        // var fn = a();  
+        // fn();
+        // fn();
+        // fn();
+
+        // (function(){
+        //     var x = 200;
+
+        //     return function(){
+        //         console.log(++x);
+        //     }
+        // })();
+
+        var aLi = document.getElementsByTagName('li');
+        for(var i=0; i<aLi.length; i++){
+            (function(index){
+                aLi[i].onclick = function(){
+                    console.log(index);
+                }
+            })(i)
+        }
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        函数防抖
+        一个需要频繁触发的函数，在规定时间内只让最后一次生效，前面的不生效
+     -->
+
+     <button>click</button>
+    <script>
+
+        function debounce(fn,delay){
+            var timer = null;
+            return function(){
+                clearTimeout(timer);
+                timer = setTimeout(fn,delay);
+            }
+        }
+        var oBtn = document.getElementsByTagName("button")[0];
+        oBtn.onclick = debounce(function(){
+                console.log((new Date).getTime());
+            },300)
+
+
+
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>

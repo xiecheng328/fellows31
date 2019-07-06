@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    函数节流 
+    一个函数执行一次后，只有大于设定的执行周期后才执行第二次 
+    有个需要频繁触发的函数 出于优化性能角度，在规定时间内，只让函数触发第一次生效，
+    后面不生效
+
+ -->
+    <script>
+        function throttle(fn,delay){
+            var startTime = 0;
+            return function(){
+                var NowTime = Date.now();
+                if(NowTime - startTime >delay){
+                    fn.call(this);
+                    startTime = NowTime;
+                }
+            }
+        }
+        // document.onmousemove = function(){
+        //     throttle(function(){
+        //         console.log(Date.now())
+        //     },1000);
+        // }
+        document.onmousemove = throttle(function(){
+                console.log(Date.now())
+                console.log(this);
+            },300);
+        
+
+          
+        
+        
+        
+    </script>
+    
+</body>
+</html>

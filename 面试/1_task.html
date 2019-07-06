@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>宏任务微任务</title>
+</head>
+
+<body>
+
+    <script>
+
+        setTimeout(function () {
+            console.log('定时器开始啦4')
+        },0);
+        console.log('代码执行开始1');
+
+        new Promise(function (resolve) {
+            console.log('马上执行for循环啦2');
+            for (var i = 0; i < 10000; i++) {
+                i == 99 && resolve();
+            }
+        }).then(function () {
+            console.log('执行then函数啦3')
+        });
+
+        // process.nextTick(function() { //微任务
+        //     console.log('6');
+        // })
+
+        // 代码执行开始   马上执行for循环啦  执行then函数啦  定时器开始啦
+        
+
+
+
+
+
+       
+    </script>
+
+</body>
+
+</html>
