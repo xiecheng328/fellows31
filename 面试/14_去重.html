@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        var arr = [1,2,3,1,2];
+        // 类数组
+        // var arr2 = new Set(arr);
+
+        // // var arr3 = [...arr2];
+        // var arr3 = Array.from(arr2)
+
+
+        function quchong(arr){
+            var obj = {};
+            var result = []
+            for(var i=0; i<arr.length; i++){
+                if(obj[arr[i]]){
+                    obj[arr[i]] = obj[arr[i]] +1;
+                }else{
+                    obj[arr[i]] = 1;
+                    result.push(arr[i]);
+                }
+            }
+        }
+
+        
+
+
+
+
+
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>
