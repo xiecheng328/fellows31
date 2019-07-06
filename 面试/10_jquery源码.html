@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>dfhgjhkl</li>
+        <li class="aa">dfhgjhkl</li>
+        <li class="aa">dfhgjhkl</li>
+    </ul>
+<!-- 
+jq最核心的是$,他是一个函数.函数中返回一个自定义的jq对象,
+Jquery她是一个类,在这个类的原形下有许多jq自定义的方法.
+每次调用$返回一个新的jq对象,同时在$函数中根据传入参数的类型
+,函数或者字符串.判断需要做的事情。
+在每一个方法中,return this,this就是在$函数中返回的jq对象..链式操作
+
+
+
+ -->
+
+    <script>
+        // $('#div1').css('background','red'); 
+
+        // $('#div1')   $('.aa') 
+        // a()
+
+        function $(selector){
+            return new Jquery(selector);
+        }
+        function Jquery(selector){
+            this.elem = [];
+            var type = selector.charAt(0);
+            if(type == "#"){
+                this.elem.push(document.getElementById(selector.substring(1)));
+            }else if(type == "."){
+                this.elem = document.getElementsByClassName(selector.substring(1));
+            }
+        }
+        Jquery.prototype.css = function(attr,val){
+            for(var i=0 ;i<this.elem.length; i++){
+                this.elem[i].style[attr] = val;
+            }
+            return this;
+        }
+        Jquery.prototype.on = function(type,fn){
+            for(var i=0 ;i<this.elem.length; i++){
+                this.elem[i].addEventListener(type,fn,false);
+            }
+            return this;
+        }
+
+        $('.aa').css("background",'red').on('click',function(){
+            console.log('hahah')
+        })
+
+        
+
+
+
+
+
+
+        
+
+
+        
+        
+        
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
